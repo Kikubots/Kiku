@@ -1,11 +1,11 @@
 import sys
 import math
-from Lion import bot
+from kiku import bot
 from telethon import events
 from pathlib import Path
-from Lion.LionConfig import Var, Config
-from Lion import LOAD_PLUG
-from Lion import CMD_LIST
+from kiku.LionConfig import Var, Config
+from kiku import LOAD_PLUG
+from kiku import CMD_LIST
 import re
 import logging
 import inspect
@@ -90,7 +90,7 @@ def load_module(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        import Lion.utils
+        import kiku.utils
         import importlib
         path = Path(f"Lion/plugins/{shortname}.py")
         name = "Lion.plugins.{}".format(shortname)
@@ -99,7 +99,7 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         print("Successfully (re)imported " + shortname)
     else:
-        import Lion.utils
+        import kiku.utils
         import importlib
         path = Path(f"Lion/plugins/{shortname}.py")
         name = "Lion.plugins.{}".format(shortname)
@@ -121,11 +121,11 @@ def load_module(shortname):
         mod.edit_or_reply = edit_or_reply
         mod.eor = eor
         # support for paperplaneextended
-        sys.modules["Lion.events"] = Lion.utils
+        sys.modules["kiku.events"] = Lion.utils
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules["Lion.plugins." + shortname] = mod
-        print("Pʟᴜɢɪɴ ʟᴏᴀᴅᴇᴅ ネ Pʟᴜɢɪɴ ɴᴀᴍᴇ " + shortname)
+        sys.modules["kiku.plugins." + shortname] = mod
+        print("Pʟᴜɢɪɴ ʟᴏᴀᴅᴇᴅ ✘ Pʟᴜɢɪɴ ɴᴀᴍᴇ " + shortname)
         # support for other third-party plugins
         sys.modules["userbot.utils"] = Lion.utils
         sys.modules["userbot"] = Lion
@@ -139,7 +139,7 @@ def remove_plugin(shortname):
             del LOAD_PLUG[shortname]
 
         except BaseException:
-            name = f"Lion.plugins.{shortname}"
+            name = f"kiku.plugins.{shortname}"
 
             for i in reversed(range(len(bot._event_builders))):
                 ev, cb = bot._event_builders[i]
@@ -416,25 +416,25 @@ def start_mybot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"Lion/plugins/mybot/{shortname}.py")
-        name = "Lion.plugins.mybot.{}".format(shortname)
+        path = Path(f"kiku/plugins/mybot/{shortname}.py")
+        name = "kiku.plugins.mybot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         print("𝙸𝙼𝙿𝙾𝚁𝚃𝙸𝙽𝙶 𝙼𝙾𝙳𝚄𝙻𝙴𝚂 𝙿𝙻𝙴𝙰𝚂𝙴 𝚆𝙰𝙸𝚃.")
-        print("𝙻𝙸𝙾𝙽 - 𝙸𝙼𝙿𝙾𝚁𝚃𝙴𝙳 " + shortname)
+        print("𝙺𝙸𝙺𝚄 - 𝙸𝙼𝙿𝙾𝚁𝚃𝙴𝙳 " + shortname)
     else:
         import importlib
         import sys
         from pathlib import Path
 
-        path = Path(f"Lion/plugins/mybot/{shortname}.py")
-        name = "Lion.plugins.mybot.{}".format(shortname)
+        path = Path(f"kiku/plugins/mybot/{shortname}.py")
+        name = "kiku.plugins.mybot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
-        sys.modules["Lion.plugins.mybot" + shortname] = mod
+        sys.modules["kiku.plugins.mybot" + shortname] = mod
         print("𝚃𝙶 𝙱𝙾𝚃 𝙷𝙰𝚂 𝙸𝙼𝙿𝙾𝚁𝚃𝙴𝙳 " + shortname)
 
 
@@ -446,8 +446,8 @@ def load_pmbot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"Lion/plugins/mybot/pmbot/{shortname}.py")
-        name = "Lion.plugins.mybot.pmbot.{}".format(shortname)
+        path = Path(f"kiku/plugins/mybot/pmbot/{shortname}.py")
+        name = "kiku.plugins.mybot.pmbot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -458,8 +458,8 @@ def load_pmbot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"Lion/plugins/mybot/pmbot/{shortname}.py")
-        name = "Lion.plugins.mybot.pmbot.{}".format(shortname)
+        path = Path(f"kiku/plugins/mybot/pmbot/{shortname}.py")
+        name = "kiku.plugins.mybot.pmbot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
