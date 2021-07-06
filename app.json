@@ -1,17 +1,17 @@
 {
- "name": "Lion 🇮🇳 UserBot",
- "description": "An advanced Telethon Userbot, from @LionXSupport",
- "logo": "https://user-images.githubusercontent.com/78837537/120152150-c37ad280-c20a-11eb-92ce-64b9124b05ed.jpg",
+ "name": "Kiku 🇮🇳 UserBot",
+ "description": "An advanced Telethon Userbot, from @teamkiku",
+ "logo": "https://telegra.ph/file/ce2d8f7bee7e9e09c8ac5.jpg",
  "keywords": [
   "telegram",
   "userbot",
-  "Lion",
+  "kiku",
   "modular",
   "productivity"
  ],
- "repository": "https://github.com/Mdnoor786/Lion-X",
- "website": "https://MdNoor786.gitbook.io/Lion/",
- "success_url": "https://t.me/LionXsupport",
+ "repository": "https://github.com/kikubots/kiku",
+ "website": "https://kikubots.gitbook.io/kiku/",
+ "success_url": "https://t.me/Teamkiku",
  "stack": "container",
  "env": {
   "ENV": {
