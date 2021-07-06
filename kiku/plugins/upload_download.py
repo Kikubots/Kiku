@@ -84,8 +84,8 @@ def time_formatter(milliseconds: int) -> str:
     return tmp[:-2]
 
 
-@Lion.on(admin_cmd(pattern=r"dl (.*)", outgoing=True))
-@Lion.on(sudo_cmd(pattern=r"dl (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=r"dl (.*)", outgoing=True))
+@kiku.on(sudo_cmd(pattern=r"dl (.*)", allow_sudo=True))
 async def download(target_file):
     """For .dl command, download files to the userbot's server."""
     await eor(target_file, "Processing ...")
@@ -163,8 +163,8 @@ async def download(target_file):
         await eor(target_file, "Reply to a message to download to my local server.")
 
 
-@Lion.on(admin_cmd(pattern=r"uploadir (.*)", outgoing=True))
-@Lion.on(sudo_cmd(pattern=r"uploadir (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=r"uploadir (.*)", outgoing=True))
+@kiku.on(sudo_cmd(pattern=r"uploadir (.*)", allow_sudo=True))
 async def uploadir(udir_event):
     """For .uploadir command, allows you to upload everything from a folder in the server"""
     input_str = udir_event.pattern_match.group(1)
@@ -246,8 +246,8 @@ async def uploadir(udir_event):
         await eor(udir_event, "404: Directory Not Found")
 
 
-@Lion.on(admin_cmd(pattern=r"ul (.*)", outgoing=True))
-@Lion.on(sudo_cmd(pattern=r"ul (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=r"ul (.*)", outgoing=True))
+@kiku.on(sudo_cmd(pattern=r"ul (.*)", allow_sudo=True))
 async def upload(u_event):
     """For .ul command, allows you to upload a file from the userbot's server"""
     await eor(u_event, "Processing ...")
@@ -323,8 +323,8 @@ def extract_w_h(file):
         return width, height
 
 
-@Lion.on(admin_cmd(pattern=r"uploadas(stream|vn|all) (.*)", outgoing=True))
-@Lion.on(sudo_cmd(pattern=r"uploadas(stream|vn|all) (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=r"uploadas(stream|vn|all) (.*)", outgoing=True))
+@kiku.on(sudo_cmd(pattern=r"uploadas(stream|vn|all) (.*)", allow_sudo=True))
 async def uploadas(uas_event):
     """For .uploadas command, allows you to specify some arguments for upload."""
     await eor(uas_event, "Processing ...")
