@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -14,15 +14,15 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from Lion.plugins import OWNER_ID, LION_NAME
+from kiku.plugins import OWNER_ID, KIKU_NAME
 import time
 from datetime import datetime
-from Lion.LionConfig import Var
+from kiku.kikuConfig import Var
 
 # start-other disabled
 startotherdis = """
 Hi there. I am {}'s bot. Nice to see you here.
-""".format(LION_NAME)
+""".format(KIKU_NAME)
 
 # start-other enabled
 if Var.PMBOT_START_MSSG is None:
