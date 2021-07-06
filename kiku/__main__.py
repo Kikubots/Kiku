@@ -21,7 +21,7 @@ async def add_bot(bot_token):
 
 async def startup_log_all_done():
     try:
-        await bot.send_message(LION, f"**𝙻𝙸𝙾𝙽 𝙱𝙾𝚃 𝙸𝚂 𝙳𝙴𝙿𝙻𝙾𝚈𝙴𝙳.\n𝚂𝙴𝙽𝙳** `{CMD_HNDLR}alive` **𝚃𝙾 𝚂𝙴𝙴 𝙱𝙾𝚃 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 𝙾𝚁 𝙽𝙾𝚃.\n\nAdd** @{BOTNAME} **𝙰𝙳𝙳 𝚃𝙾 𝚃𝙷𝙸𝚂 𝙸𝙽 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙼𝙰𝙺𝙴 𝙷𝙸𝙼 𝙰𝙳𝙼𝙸𝙽 𝙵𝙾𝚁 𝙴𝙽𝙰𝙱𝙻𝙸𝙽𝙶 𝙰𝙻𝙻 𝚃𝙷𝙴 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂 𝙾𝙵 𝙻𝙸𝙾𝙽 𝙱𝙾𝚃**")
+        await bot.send_message(LION, f"**𝙺𝙸𝙺𝚄 𝙱𝙾𝚃 𝙸𝚂 𝙳𝙴𝙿𝙻𝙾𝚈𝙴𝙳.\n𝚂𝙴𝙽𝙳** `{CMD_HNDLR}alive` **𝚃𝙾 𝚂𝙴𝙴 𝙱𝙾𝚃 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 𝙾𝚁 𝙽𝙾𝚃.\n\nAdd** @{BOTNAME} **𝙰𝙳𝙳 𝚃𝙾 𝚃𝙷𝙸𝚂 𝙸𝙽 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙼𝙰𝙺𝙴 𝙷𝙸𝙼 𝙰𝙳𝙼𝙸𝙽 𝙵𝙾𝚁 𝙴𝙽𝙰𝙱𝙻𝙸𝙽𝙶 𝙰𝙻𝙻 𝚃𝙷𝙴 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂 𝙾𝙵 𝙻𝙸𝙾𝙽 𝙱𝙾𝚃**")
     except BaseException:
         print("Either PRIVATE_GROUP_ID is wrong or you have left the group.")
 
@@ -44,7 +44,7 @@ else:
     else:
         bot.start()
 
-path = 'Lion/plugins/*.py'
+path = 'kiku/plugins/*.py'
 files = glob.glob(path)
 for name in files:
     with open(name) as f:
@@ -52,10 +52,10 @@ for name in files:
         shortname = path1.stem
         load_module(shortname.replace(".py", ""))
 
-print("Lion has been deployed! ")
+print("kiku has been deployed! ")
 
 print("Setting up TGBot")
-path = "Lion/plugins/mybot/*.py"
+path = "kiku/plugins/mybot/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as f:
@@ -64,7 +64,7 @@ for name in files:
         start_mybot(shortname.replace(".py", ""))
 
 if LOAD_MYBOT == "True":
-    path = "Lion/plugins/mybot/pmbot/*.py"
+    path = "kiku/plugins/mybot/pmbot/*.py"
     files = glob.glob(path)
     for name in files:
         with open(name) as f:
@@ -77,7 +77,7 @@ print("TGBot set up - Level - Basic")
 print(
     """
                 ----------------------------------------------------------------------
-                    Lɪᴏɴ X ʜᴀs ʙᴇᴇɴ ᴅᴇᴘʟᴏʏᴇᴅ, ᴅᴏ ᴠɪsɪᴛ @LionXsupport !!
+                    Lɪᴏɴ X ʜᴀs ʙᴇᴇɴ ᴅᴇᴘʟᴏʏᴇᴅ, ᴅᴏ ᴠɪsɪᴛ @kikusupport !!
                     ʟɪᴏɴ ᴠᴇʀ: V2.2
                     ©Tᴇᴀᴍ ʟɪᴏɴ
                 ----------------------------------------------------------------------
