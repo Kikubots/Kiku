@@ -5,9 +5,9 @@
 
 import re
 
-from Lion import bot
-from Lion import bot as Lion
-from Lion.utils import admin_cmd
+from kiku import bot
+from kiku import bot as Lion
+from kiku.utils import admin_cmd
 
 IF_EMOJI = re.compile(
     "["
@@ -31,7 +31,7 @@ def deEmojify(inputString: str) -> str:
     return re.sub(IF_EMOJI, "", inputString)
 
 
-@Lion.on(admin_cmd(pattern="playxo(?: |$)(.*)"))
+@kiku.on(admin_cmd(pattern="playxo(?: |$)(.*)"))
 async def nope(doit):
     ok = doit.pattern_match.group(1)
     if not ok:
