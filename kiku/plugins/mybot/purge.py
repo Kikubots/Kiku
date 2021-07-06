@@ -5,8 +5,8 @@ from telethon import events
 from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from Lion import bot
-from Lion.utils import bot
+from kiku import bot
+from kiku.utils import bot
 
 OWNER_ID = bot.uid
 # Check if user has admin rights
