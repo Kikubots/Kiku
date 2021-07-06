@@ -6,10 +6,10 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from Lion.utils import admin_cmd
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="xnxx?(.*)"))
+@kiku.on(admin_cmd(pattern="xnxx?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -59,7 +59,7 @@ async def _(event):
             await event.client.send_file(event.chat_id, response.message)
 
 
-@Lion.on(admin_cmd(pattern="les?(.*)"))
+@kiku.on(admin_cmd(pattern="les?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
