@@ -1,8 +1,8 @@
 import asyncio
 from datetime import datetime 
 
-from Lion.__init__ import StartTime
-from Lion.plugins import ALIVE_NAME, OWNER_ID, TG_BOT_USER_NAME_BF_HER
+from kiku.__init__ import StartTime
+from kiku.plugins import ALIVE_NAME, OWNER_ID, TG_BOT_USER_NAME_BF_HER
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ℓιση υsεя"
 
