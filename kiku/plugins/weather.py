@@ -10,8 +10,8 @@ import aiohttp
 from Lion.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="weathers (.*)"))
-@Lion.on(sudo_cmd(pattern="weathers (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="weathers (.*)"))
+@kiku.on(sudo_cmd(pattern="weathers (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -58,7 +58,7 @@ async def _(event):
         await eor(event, response_api["message"])
 
 
-@Lion.on(admin_cmd(pattern="wttr (.*)"))
+@kiku.on(admin_cmd(pattern="wttr (.*)"))
 async def _(event):
     if event.fwd_from:
         return
