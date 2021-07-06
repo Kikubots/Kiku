@@ -447,7 +447,7 @@ async def a_txt(event):
                 return await conv.send_message("Cancelled!!")
             heroku_var=app.config()
             xx = await tgbot.send_message(event.chat_id, "Changing your Alive Message, please wait for a minute")
-            heroku_var[Lion]=f"{themssg}"
+            heroku_var[kiku]=f"{themssg}"
             mssg=f"Changed your alive text from\n`{old_alv}`\nto\n`{themssg}`\n"
             await xx.edit(mssg)
     else:
@@ -484,7 +484,7 @@ async def alv_pic(event):
             return
         xx = await tgbot.send_message(event.chat_id, "Changing your Alive Pic, please wait for a minute")
         heroku_var=app.config()
-        heroku_var[Lion]=f"{url}"
+        heroku_var[kiku]=f"{url}"
         mssg=f"Successfully changed your alive pic. Please wait for a minute.\n"
         await xx.edit(mssg)
     else:
@@ -521,7 +521,7 @@ async def a_txt(event):
                 await conv.send_message("Cancelled!!")
             heroku_var=app.config()
             xx = await tgbot.send_message(event.chat_id, "Changing your PMSecurity Message, please wait for a minute")
-            heroku_var[Lion]=f"{themssg}"
+            heroku_var[kiku]=f"{themssg}"
             mssg=f"Changed your PMsecurity Message from\n`{old_alv}`\nto\n`{themssg}`\n"
             await xx.edit(mssg)
     else:
@@ -558,7 +558,7 @@ async def alv_pic(event):
             return
         xx = await tgbot.send_message(event.chat_id, "Changing your PMSecurity Pic, please wait for a minute")
         heroku_var=app.config()
-        heroku_var[Lion]=f"{url}"
+        heroku_var[kiku]=f"{url}"
         mssg=f"Successfully changed your PMSecurity pic. Please wait for a minute.\n"
         await xx.edit(mssg)
     else:
