@@ -4,8 +4,8 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from Lion.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="warn1"))
-@Lion.on(sudo_cmd(pattern="warn1", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="warn1"))
+@kiku.on(sudo_cmd(pattern="warn1", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -27,12 +27,12 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 
 
-@Lion.on(admin_cmd(pattern="warn2"))
-@Lion.on(sudo_cmd(pattern="warn2", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="warn2"))
+@kiku.on(sudo_cmd(pattern="warn2", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "`You Have  2/3  warnings...\nWatch out!....\nReason for last warn: Porn Demand`"
+    mentions = "`You Have  2/3  warnings...\nWatch out!....\nReason for last warn: @teamkiku`"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -48,8 +48,8 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 
 
-@Lion.on(admin_cmd(pattern="warn3"))
-@Lion.on(admin_cmd(pattern="warn3", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="warn3"))
+@kiku.on(admin_cmd(pattern="warn3", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -71,8 +71,8 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 
 
-@Lion.on(admin_cmd(pattern="warn0"))
-@Lion.on(admin_cmd(pattern="warn0", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="warn0"))
+@kiku.on(admin_cmd(pattern="warn0", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -89,8 +89,8 @@ async def _(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="ocb"))
-@Lion.on(sudo_cmd(pattern="ocb", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="ocb"))
+@kiku.on(sudo_cmd(pattern="ocb", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -107,7 +107,7 @@ async def _(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="fw"))
+@kiku.on(admin_cmd(pattern="fw"))
 async def _(event):
     if event.fwd_from:
         return
