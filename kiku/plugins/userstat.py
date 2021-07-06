@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -24,8 +24,8 @@ from telethon.tl.functions.users import GetFullUserRequest
 swapi = os.environ.get("SPAMWATCH_API_KEY", None)
 
 
-@Lion.on(admin_cmd(pattern=f"ustat(?: |$)(.*)"))
-@Lion.on(sudo_cmd(pattern=f"ustat(?: |$)(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=f"ustat(?: |$)(.*)"))
+@kiku.on(sudo_cmd(pattern=f"ustat(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
@@ -37,7 +37,7 @@ async def _(event):
         return
     tuser, rdhs = await get_full_user(event)
     if tuser is None:
-        await lion.edit("Error! Please mention user to check his stats!!")
+        await kiku.edit("Error! Please mention user to check his stats!!")
         return False
     user_id = tuser.user.id
     first_name = html.escape(tuser.user.first_name)
