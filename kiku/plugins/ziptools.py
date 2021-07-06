@@ -6,7 +6,7 @@ import time
 from . import *
 
 
-@Lion.on(admin_cmd(pattern="zip ?(.*)"))
+@kiku.on(admin_cmd(pattern="zip ?(.*)"))
 async def zipp(event):
     reply = await event.get_reply_message()
     t = time.time()
@@ -35,7 +35,7 @@ async def zipp(event):
         event.chat_id,
         xxx,
         force_document=True,
-        thumb="resources/Lion.jpg",
+        thumb="resources/kiku.jpg",
         caption=f"`{xxx.name}`",
         reply_to=reply,
     )
@@ -44,7 +44,7 @@ async def zipp(event):
     await xx.delete()
 
 
-@Lion.on(admin_cmd(pattern="unzip ?(.*)"))
+@kiku.on(admin_cmd(pattern="unzip ?(.*)"))
 async def unzipp(event):
     reply = await event.get_reply_message()
     t = time.time()
@@ -98,7 +98,7 @@ async def unzipp(event):
         await xx.delete()
 
 
-@Lion.on(admin_cmd(pattern="addzip ?(.*)"))
+@kiku.on(admin_cmd(pattern="addzip ?(.*)"))
 async def azipp(event):
     reply = await event.get_reply_message()
     t = time.time()
@@ -124,7 +124,7 @@ async def azipp(event):
     await xx.edit(f"∂σωηℓσα∂ε∂ `{file}` sυccsғυℓℓү...\n©тεαм ℓιση")
 
 
-@Lion.on(admin_cmd(pattern="dozip ?(.*)"))
+@kiku.on(admin_cmd(pattern="dozip ?(.*)"))
 async def do_zip(event):
     if not os.path.isdir("zip"):
         return await eor(
