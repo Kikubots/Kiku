@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -17,25 +17,25 @@
 # (c) @xditya
 
 import re
-from Lion.plugins.mybot import *
+from kiku.plugins.mybot import *
 from telethon import events, Button
 import heroku3
 import asyncio
 import os
 import requests
-from Lion.plugins.mybot.sql.blacklist_sql import all_bl_users
-from Lion.plugins import LION_NAME
-from Lion.plugins.mybot.sql.userbase_sql import add_to_userbase, present_in_userbase, full_userbase
+from kiku.plugins.mybot.sql.blacklist_sql import all_bl_users
+from kiku.plugins import LION_NAME
+from kiku.plugins.mybot.sql.userbase_sql import add_to_userbase, present_in_userbase, full_userbase
 from datetime import datetime
 from telethon import events
-from Lion.LionConfig import Var, Config
+from kiku.LionConfig import Var, Config
 from telegraph import Telegraph, upload_file
-from Lion import CUSTOM_PMPERMIT
+from kiku import CUSTOM_PMPERMIT
 
 ##################--CONSTANTS--##################
 LOAD_MYBOT = Var.LOAD_MYBOT
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
-BOT_PIC = Var.BOT_PIC if Var.BOT_PIC else "https://telegra.ph/file/28ed48fae7e23192af2cc.jpg"
+BOT_PIC = Var.BOT_PIC if Var.BOT_PIC else "https://telegra.ph/file/ce2d8f7bee7e9e09c8ac5.jpg"
 heroku_api = "https://api.heroku.com"
 path = Config.TMP_DOWNLOAD_DIRECTORY
 if not os.path.isdir(path):
@@ -44,7 +44,7 @@ telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
 auth_url = r["auth_url"]
 ################--CONSTANTS-END-#################
-poto = "https://telegra.ph/file/28ed48fae7e23192af2cc.jpg"
+poto = "https://telegra.ph/file/ce2d8f7bee7e9e09c8ac5.jpg"
 # start-others
 
 
@@ -85,9 +85,9 @@ async def start_all(event):
                                   caption=startotherena,
                                   buttons=[
                                       [Button.url(
-                                          "Lion", url="https://github.com/TeamLion-X/Lion-X")],
+                                          "kiku", url="https://github.com/kikubots/kiku")],
                                       [Button.inline(
-                                          "Whats this?", data="Lion")]
+                                          "Whats this?", data="kiku")]
                                   ]
                                   )
         else:
@@ -95,9 +95,9 @@ async def start_all(event):
                                      startotherena,
                                      buttons=[
                                          [Button.url(
-                                             "Lion", url="https://github.com/TeamLion-X/Lion-X")],
+                                             "Lion", url="https://github.com/Teamkiku/kiku")],
                                          [Button.inline(
-                                             "Whats this?", data="Lion")]
+                                             "Whats this?", data="kiku")]
                                      ]
                                      )
 
@@ -117,7 +117,7 @@ async def owner(event):
                                  [Button.inline("Bʀᴏᴀᴅᴄᴀsᴛ",
                                                 data="telebroad")],
                                  [Button.url("Lɪᴏɴ Sᴜᴘᴘᴏʀᴛ",
-                                             url="https://t.me/LionXSupport")]
+                                             url="https://t.me/teamkiku")]
                              ])
 
 
@@ -140,10 +140,10 @@ async def logs(event):
         event.chat_id,
         "logs.txt",
         reply_to=event.id,
-        caption="**Heroku** Lion Logs",
+        caption="**Heroku** kiku Logs",
         buttons=[
             [Button.url("View Online", f"{url}")],
-            [Button.url("Crashed?", "t.me/LionXsupport")]
+            [Button.url("Crashed?", "t.me/Teamkiku")]
         ])
     await asyncio.sleep(5)
     return os.remove('logs.txt')
@@ -182,10 +182,10 @@ async def settings(event):
 async def settings(event):
     await event.edit("Browse through the available options:",
                      buttons=[
-                         [(Button.url("Repository", url="https://github.com/TeamLion-X/Lion-X")),
-                          (Button.url("Deploy", url="https://dashboard.heroku.com/new?template=https://github.com/TeamLion-X/Lion-X"))],
+                         [(Button.url("Repository", url="https://github.com/Teamkiku/kiku")),
+                          (Button.url("Deploy", url="https://dashboard.heroku.com/new?template=https://github.com/Teamkiku/kiku"))],
                          [Button.url("Support",
-                                     url="https://t.me/LionXSupport")]
+                                     url="https://t.me/Teamkiku")]
                      ])
 
 
