@@ -1,6 +1,6 @@
 # code of raphielgang and paperplane
 try:
-    from Lion.plugins.sql_helper import SESSION, BASE
+    from kiku.plugins.sql_helper import SESSION, BASE
 except ImportError:
     raise Exception("Hello!")
 
