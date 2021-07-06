@@ -4,8 +4,8 @@ Syntax: .fwd as reply to any message"""
 from Lion.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="frwd"))
-@Lion.on(sudo_cmd(pattern="frwd", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="frwd"))
+@kiku.on(sudo_cmd(pattern="frwd", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
