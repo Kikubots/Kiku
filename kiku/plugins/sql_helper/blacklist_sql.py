@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import func, distinct, Column, String, UnicodeText
 
-from Lion.plugins.sql_helper import SESSION, BASE
+from kiku.plugins.sql_helper import SESSION, BASE
 
 
 class BlackListFilters(BASE):
