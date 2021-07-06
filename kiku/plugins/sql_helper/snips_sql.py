@@ -1,5 +1,5 @@
 from sqlalchemy import Column, UnicodeText, LargeBinary, Numeric
-from Lion.plugins.sql_helper import SESSION, BASE
+from kiku.plugins.sql_helper import SESSION, BASE
 
 
 class Snips(BASE):
