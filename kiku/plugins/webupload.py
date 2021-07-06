@@ -2,15 +2,15 @@
 import asyncio
 import time
 
-from Lion.utils import admin_cmd
+from kiku.utils import admin_cmd
 
 
-@Lion.on(
+@kiku.on(
     admin_cmd(
         pattern="webupload ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles)"
     )
 )
-@Lion.on(
+@kiku.on(
     sudo_cmd(
         pattern="webupload ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles)",
         allow_sudo=True,
