@@ -7,7 +7,7 @@ from Lion.plugins.sql_helper.welcome_sql import (
     rm_welcome_setting,
     update_previous_welcome,
 )
-from Lion.utils import admin_cmd
+from kiku.utils import admin_cmd
 
 
 @bot.on(events.ChatAction())  # pylint:disable=E0602
@@ -64,8 +64,8 @@ async def _(event):
             update_previous_welcome(event.chat_id, current_message.id)
 
 
-@Lion.on(admin_cmd(pattern="savewelcome"))  # pylint:disable=E0602
-@Lion.on(sudo_cmd(pattern="savewelcome", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="savewelcome"))  # pylint:disable=E0602
+@kiku.on(sudo_cmd(pattern="savewelcome", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -80,8 +80,8 @@ async def _(event):
         await eor(event, "Welcome note saved. ")
 
 
-@Lion.on(admin_cmd(pattern="clearwelcome"))  # pylint:disable=E0602
-@Lion.on(sudo_cmd(pattern="clearwelcome", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="clearwelcome"))  # pylint:disable=E0602
+@kiku.on(sudo_cmd(pattern="clearwelcome", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -94,8 +94,8 @@ async def _(event):
     )
 
 
-@Lion.on(admin_cmd(pattern="listwelcome"))  # pylint:disable=E0602
-@Lion.on(sudo_cmd(pattern="listwelcome", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="listwelcome"))  # pylint:disable=E0602
+@kiku.on(sudo_cmd(pattern="listwelcome", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
