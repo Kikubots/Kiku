@@ -7,7 +7,7 @@ import asyncio
 from Lion import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="(.*)"))
+@kiku.on(admin_cmd(pattern="(.*)"))
 async def _(event):
     if event.fwd_from:
         return
