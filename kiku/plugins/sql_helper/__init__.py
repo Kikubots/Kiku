@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 
 
 # the secret configuration specific things
-from Lion.LionConfig import Var
+from kiku.kikuConfig import Var
 
 
 def start() -> scoped_session:
