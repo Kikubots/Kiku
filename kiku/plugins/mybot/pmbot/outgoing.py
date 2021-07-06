@@ -1,9 +1,9 @@
 # by @StarkGang 😋
 
-from Lion.plugins.mybot.sql.users_sql import get_user_id
+from kiku.plugins.mybot.sql.users_sql import get_user_id
 from telethon import events
 from telethon.utils import pack_bot_file_id
-from Lion.plugins import OWNER_ID
+from kiku.plugins import OWNER_ID
 
 # outgoing, aka, replying to mssg
 
