@@ -10,8 +10,8 @@ import random
 
 from telethon import functions, types, utils
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
 def choser(cmd, pack, blacklist=None):
@@ -19,7 +19,7 @@ def choser(cmd, pack, blacklist=None):
         blacklist = {}
     docs = None
 
-    @Lion.on(admin_cmd(pattern=rf"{cmd}", outgoing=True))
+    @kiku.on(admin_cmd(pattern=rf"{cmd}", outgoing=True))
     async def handler(event):
         await event.delete()
 
