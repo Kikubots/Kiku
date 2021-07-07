@@ -4,14 +4,14 @@ import asyncio
 import os
 import time
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd, progress
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd, progress
 
 FF_MPEG_DOWN_LOAD_MEDIA_PATH = "uniborg.media.ffmpeg"
 
 
-@Lion.on(admin_cmd(pattern="ffmpegsave"))
-@Lion.on(sudo_cmd(pattern="ffmpegsave", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="ffmpegsave"))
+@kiku.on(sudo_cmd(pattern="ffmpegsave", allow_sudo=True))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
         return
@@ -50,8 +50,8 @@ async def ff_mpeg_trim_cmd(event):
         )
 
 
-@Lion.on(admin_cmd(pattern="ffmpegtrim"))
-@Lion.on(sudo_cmd(pattern="ffmpegtrim", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="ffmpegtrim"))
+@kiku.on(sudo_cmd(pattern="ffmpegtrim", allow_sudo=True))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
         return
