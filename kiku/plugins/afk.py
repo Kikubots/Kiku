@@ -6,8 +6,8 @@ from telegraph import Telegraph, upload_file
 from telethon import Button, events
 from telethon.tl import functions, types
 
-from Lion import ALIVE_NAME, CMD_HELP
-from Lion.LionConfig import Config, Var
+from kiku import ALIVE_NAME, CMD_HELP
+from kiku.LionConfig import Config, Var
 #===========CUSTOM AFK DONE ✅
 # --=============================================--#
 global USER_AFK  # pylint:disable=E0602
@@ -37,7 +37,7 @@ auth_url = r["auth_url"]
 # --=============================================--#
 
 
-@Lion.on(
+@kiku.on(
     events.NewMessage(incoming=True, func=lambda e: bool(e.mentioned or e.is_private))
 )
 async def on_afk(event):
@@ -187,7 +187,7 @@ async def _(event):
                 )
 
 
-@Lion.on(events.NewMessage(outgoing=True))
+@kiku.on(events.NewMessage(outgoing=True))
 async def set_not_afk(event):
     global USER_AFK
     global afk_time
