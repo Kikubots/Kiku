@@ -14,14 +14,14 @@ from re import findall
 import requests
 from search_engine_parser import GoogleSearch
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern=r"gs (.*)"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern=r"gs (.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern=r"gs (.*)"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern=r"gs (.*)"))
 async def gsearch(q_event):
-    """For .google command, do a Google search from @LionHelp."""
+    """For .google command, do a Google search from @teamkiku."""
     match = q_event.pattern_match.group(1)
     page = findall(r"page=\d+", match)
     try:
@@ -49,8 +49,8 @@ async def gsearch(q_event):
     )
 
 
-@Lion.on(admin_cmd("duckduckgo (.*)"))
-@Lion.on(sudo_cmd("duckduckgo (.*)", allow_sudo=True))
+@kiku.on(admin_cmd("duckduckgo (.*)"))
+@kiku.on(sudo_cmd("duckduckgo (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -66,8 +66,8 @@ async def _(event):
         await eor(event, "something is wrong. please try again later.")
 
 
-@Lion.on(admin_cmd(pattern="ggl (.*)"))
-@Lion.on(sudo_cmd(pattern="ggl (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="ggl (.*)"))
+@kiku.on(sudo_cmd(pattern="ggl (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
