@@ -19,9 +19,9 @@ import pybase64
 from telegraph import exceptions, upload_file
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from Lion import CMD_HELP, bot
-from Lion.helper import *
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP, bot
+from kiku.helper import *
+from kiku.utils import admin_cmd
 
 
 @bot.on(admin_cmd(pattern="threats(?: |$)(.*)"))
