@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -21,8 +21,8 @@ Echoes the message via your bot
 from Lion import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern=r"echo (.*)"))
-@Lion.on(sudo_cmd(pattern=r"echo ( .*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=r"echo (.*)"))
+@kiku.on(sudo_cmd(pattern=r"echo ( .*)", allow_sudo=True))
 async def _(event):
     bxt = Var.TG_BOT_USER_NAME_BF_HER
     try:
