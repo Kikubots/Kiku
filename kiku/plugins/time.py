@@ -7,18 +7,18 @@ from datetime import datetime
 
 from PIL import Image, ImageDraw, ImageFont
 
-from Lion.utils import admin_cmd
+from kiku.utils import admin_cmd
 
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
 
-@Lion.on(admin_cmd(pattern="time ?(.*)"))  # pylint:disable=E0602
-@Lion.on(sudo_cmd(pattern="time ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="time ?(.*)"))  # pylint:disable=E0602
+@kiku.on(sudo_cmd(pattern="time ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     current_time = datetime.now().strftime(
-        "⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡ \n⚡ Lion TIMEZONE⚡ \n LOCATION: India \n  Time: %H:%M:%S \n  Date: %d.%m.%y \n⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡"
+        "⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡ \n⚡ Kiku TIMEZONE⚡ \n LOCATION: India \n  Time: %H:%M:%S \n  Date: %d.%m.%y \n⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡"
     )
     start = datetime.now()
     input_str = event.pattern_match.group(1)
@@ -42,8 +42,8 @@ async def _(event):
     await borg.send_file(  # pylint:disable=E0602
         event.chat_id,
         required_file_name,
-        caption="Lion: Powered by @LionHelp",
-        # Courtesy: @ManueI15
+        caption="Lion: Powered by @teamkiku",
+        # Courtesy: @thekiku
         reply_to=reply_msg_id,
     )
     os.remove(required_file_name)
@@ -54,8 +54,8 @@ async def _(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="gtime (.*)"))  # pylint:disable=E0602
-@Lion.on(sudo_cmd(pattern="gtime (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="gtime (.*)"))  # pylint:disable=E0602
+@kiku.on(sudo_cmd(pattern="gtime (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
