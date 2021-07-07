@@ -4,8 +4,8 @@ from coffeehouse.api import API
 from coffeehouse.lydia import LydiaAI
 from telethon import events
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 # Non-SQL Mode
 ACC_LYDIA = {}
@@ -16,8 +16,8 @@ if Var.LYDIA_API_KEY:
     lydia = LydiaAI(api_client)
 
 
-@Lion.on(admin_cmd(pattern="repcf", outgoing=True))
-@Lion.on(sudo_cmd(pattern="repcf", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="repcf", outgoing=True))
+@kiku.on(sudo_cmd(pattern="repcf", allow_sudo=True))
 async def repcf(event):
     if event.fwd_from:
         return
@@ -33,8 +33,8 @@ async def repcf(event):
         await eor(event, str(e))
 
 
-@Lion.on(admin_cmd(pattern="addcf", outgoing=True))
-@Lion.on(sudo_cmd(pattern="addcf", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="addcf", outgoing=True))
+@kiku.on(sudo_cmd(pattern="addcf", allow_sudo=True))
 async def addcf(event):
     if event.fwd_from:
         return
@@ -58,8 +58,8 @@ async def addcf(event):
         await eor(event, "Reply to a user to activate Lydia AI on them")
 
 
-@Lion.on(admin_cmd(pattern="remcf", outgoing=True))
-@Lion.on(sudo_cmd(pattern="remcf", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="remcf", outgoing=True))
+@kiku.on(sudo_cmd(pattern="remcf", allow_sudo=True))
 async def remcf(event):
     if event.fwd_from:
         return
