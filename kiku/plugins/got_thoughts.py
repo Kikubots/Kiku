@@ -14,7 +14,7 @@ from Lion import CMD_HELP
 from Lion.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="gott", outgoing=True))
+@kiku.on(admin_cmd(pattern="gott", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
