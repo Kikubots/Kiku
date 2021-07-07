@@ -4,13 +4,13 @@
 
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from Lion.utils import admin_cmd
+from kiku.utils import admin_cmd
 
 # Added to Lion by @its_xditya
 
 
-@Lion.on(admin_cmd(pattern=r"administrator", outgoing=True))
-@Lion.on(sudo_cmd(pattern=r"administrator", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=r"administrator", outgoing=True))
+@kiku.on(sudo_cmd(pattern=r"administrator", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -27,11 +27,11 @@ async def _(event):
     await event.delete()
 
 
-# Added to Lion by @its_xditya
+# Added to kiku by @its_xditya
 
 
-@Lion.on(admin_cmd(pattern=r"tagall", outgoing=True))
-@Lion.on(sudo_cmd(pattern=r"tagall", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=r"tagall", outgoing=True))
+@kiku.on(sudo_cmd(pattern=r"tagall", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
