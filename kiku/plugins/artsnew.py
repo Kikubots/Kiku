@@ -1,6 +1,6 @@
-from Lion import ALIVE_NAME
-from Lion import bot as Lion
-from Lion.utils import admin_cmd
+from kiku import ALIVE_NAME
+from kiku import bot as Lion
+from kiku.utils import admin_cmd
 
 n = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 
@@ -85,36 +85,36 @@ E = (
 )
 
 
-@Lion.on(admin_cmd(pattern=r"monster"))
+@kiku.on(admin_cmd(pattern=r"monster"))
 async def bluedevilmonster(monster):
     await monster.edit(M)
 
 
-@Lion.on(admin_cmd(pattern=r"pig"))
+@kiku.on(admin_cmd(pattern=r"pig"))
 async def bluedevilpig(pig):
     await pig.edit(P)
 
 
-@Lion.on(admin_cmd(pattern=r"kiler"))
+@kiku.on(admin_cmd(pattern=r"kiler"))
 async def bluedevilkiller(kiler):
     await kiler.edit(K)
 
 
-@Lion.on(admin_cmd(pattern=r"gun"))
+@kiku.on(admin_cmd(pattern=r"gun"))
 async def bluedevilgun(gun):
     await gun.edit(G)
 
 
-@Lion.on(admin_cmd(pattern=r"dog"))
+@kiku.on(admin_cmd(pattern=r"dog"))
 async def bluedevildog(dog):
     await dog.edit(D)
 
 
-@Lion.on(admin_cmd(pattern=r"hello"))
+@kiku.on(admin_cmd(pattern=r"hello"))
 async def bluedevilhello(hello):
     await hello.edit(H)
 
 
-@Lion.on(admin_cmd(pattern=r"hmf"))
+@kiku.on(admin_cmd(pattern=r"hmf"))
 async def bluedevilhmf(hmf):
     await hmf.edit(E)
