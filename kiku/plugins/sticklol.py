@@ -1,4 +1,4 @@
-# (c)2020 Lion
+# (c)2020 kiku
 # You may not use this file without proper authorship and consent from @LionSupport
 #
 """
@@ -10,7 +10,7 @@ import random
 
 from telethon import functions, types, utils
 
-from Lion.utils import admin_cmd
+from kiku.utils import admin_cmd
 
 
 def choser(cmd, pack, blacklist=None):
@@ -18,7 +18,7 @@ def choser(cmd, pack, blacklist=None):
         blacklist = {}
     docs = None
 
-    @Lion.on(admin_cmd(pattern=rf"{cmd}", outgoing=True))
+    @kiku.on(admin_cmd(pattern=rf"{cmd}", outgoing=True))
     async def handler(event):
         await event.delete()
 
@@ -41,7 +41,7 @@ def choser(cmd, pack, blacklist=None):
 
 choser(
     "sticklol",
-    "Lion_LOLPack",
+    "kiku_LOLPack",
     {
         3088919966519394666,
         3088919966519394334,
