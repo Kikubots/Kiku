@@ -26,16 +26,16 @@ from telethon import Button, custom, events, functions
 
 from telethon.tl.functions.users import GetFullUserRequest
 
-from Lion import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, bot
-from Lion.LionConfig import Var
+from kiku import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, bot
+from kiku.LionConfig import Var
 
 fuk_uid = bot.uid
-HELP_PIC = "https://telegra.ph/file/19cb1922fd016aaac12b9.jpg"
+HELP_PIC = "https://telegra.ph/file/b637ae9a2a68b151e37c9.jpg"
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/bfa06df35913425dbcbc1.jpg"
+    else "https://telegra.ph/file/b637ae9a2a68b151e37c9.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -86,11 +86,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid and query.startswith("`ℓισи"):
             rev_text = query[::-1]
             but = [[custom.Button.inline("💬 Oᴘᴇɴ ʜᴇʟᴘ ᴍᴇɴᴜ »»", data="menu")]]
-            but += [[custom.Button.inline("💡 Pɪɴɢ »»", data="pkng")]]
-            but += [[Button.url("Mʏ ᴍᴀsᴛᴇʀ »»", "tg://user?id={fuk_uid})")]]
-            but += [[custom.Button.inline("Mᴀsᴛᴇʀ•ᴛᴏᴏʟs", data="mtools")]]
-            but += [[custom.Button.inline("Iɴʟɪɴᴇ", data="linline")]]
-            but += [[Button.url("🔰 Sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ »»", "t.me/LionXsupport"), Button.url("🔰 Uᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ", "t.me/LionXupdates")]]
+            but += [[custom.Button.inline("💡 Pɪɴɢ »»", data="pong")]]
+            but += [[Button.url("Assistant »»", "https://t.me/{asst.me.username}?start=set)]]
+            but += [[Button.url("🔰 Sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ »»", "t.me/Teamkiku"), Button.url("🔰 Uᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ", "t.me/kikusupport")]]
             result = builder.photo(
                 file=HELP_PIC,
                 text="{}\n𝙲𝚄𝚁𝚁𝙴𝙽𝚃𝙻𝚈 𝙻𝙾𝙰𝙳𝙴𝙳 𝙿𝙻𝚄𝙶𝙸𝙽𝚂: {}".format(query, len(CMD_LIST)),
@@ -103,11 +101,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text=f"**𝙻𝙸𝙾𝙽 𝚄𝙱 𝚂𝚃𝙰𝚃𝚂 𝙾𝙵 𝚃𝙷𝙴 [{DEFAULTUSER}](tg://user?id={myid})**\n\n__𝙱𝙾𝚃 𝙸𝚂 𝚂𝙼𝙾𝙾𝚃𝙷𝙻𝚈 𝚁𝚄𝙽𝙽𝙸𝙽𝙶, 𝙼𝙰𝚂𝚃𝙴𝚁!__\n\n(c) @LionXsupport",
                 buttons=[
                     [custom.Button.inline("Stats", data="statcheck")],
-                    [Button.url("Repo", "https://github.com/Mdnoor786/Lion-X")],
+                    [Button.url("Repo", "https://github.com/Teamkiku/kiku")],
                     [
                         Button.url(
                             "𝙳𝙴𝙿𝙻𝙾𝚈 𝙽𝙾𝚆!",
-                            "https://heroku.com/deploy?template=https://github.com/Mdnoor786/Lion-X",
+                            "https://heroku.com/deploy?template=https://github.com/Teamkiku/kiku",
                         )
                     ],
                 ],
@@ -132,35 +130,35 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text=f"Lion - Telegram Userbot.",
                 buttons=[
                     [
-                        Button.url("𝙻𝙸𝙾𝙽 𝚁𝙴𝙿𝙾", "https://github.com/Mdnoor786/Lion-X"),
+                        Button.url("Kiku Repo", "https://github.com/Teamkiku/kiku"),
                         Button.url(
                             "𝙳𝙴𝙿𝙻𝙾𝚈 𝙽𝙾𝚆",
-                            "https://heroku.com/deploy?template=https://github.com/Mdnoor786/Lion-X",
+                            "https://heroku.com/deploy?template=https://github.com/Teamkiku/kiku",
                         ),
                     ],
-                    [Button.url("𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙲𝙷𝙰𝚃", "https://t.me/LionXsupport")],
+                    [Button.url("𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙲𝙷𝙰𝚃", "https://t.me/kikusupport")],
                 ],
             )
         else:
             result = builder.article(
                 "𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴",
-                text="**Welcome to Lion**\n\n`Click below buttons for more`",
+                text="**Welcome to kiku**\n\n`Click below buttons for more`",
                 buttons=[
                     [
                         custom.Button.url(
-                            "🚑 Support Group 🚑", "https://t.me/lionXsupport"
+                            "🚑 Support Group 🚑", "https://t.me/kikusupport"
                         )
                     ],
                     [
                         custom.Button.url(
-                            "👨‍💻Source Code‍💻", "https://github.com/Mdnoor786/Lion-X"
+                            "👨‍💻Source Code‍💻", "https://github.com/Teamkiku/kiku"
                         ),
                         custom.Button.url(
                             "Deploy 🌀",
-                            "https://heroku.com/deploy?template=https://github.com/Mdnoor786/Lion-X",
+                            "https://heroku.com/deploy?template=https://github.com/Teamkiku/kiku",
                         ),
                     ],
-                    [custom.Button.url("Updates ↗️", "https://t.me/LionHelpChat")],
+                    [custom.Button.url("Updates ↗️", "https://t.me/Teamkiku")],
                 ],
                 link_preview=False,
             )
@@ -179,7 +177,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = (
-                "Please get your own Userbot from @LionHelp , and don't use mine!"
+                "Please get your own Userbot from @teamkiku , and don't use mine!"
             )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
@@ -190,7 +188,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"This is the PM Security for {DEFAULTUSER} to keep away spammers and retards.\n\nProtected by [Lion](t.me/LionXsupport)"
+                f"This is the PM Security for {DEFAULTUSER} to keep away spammers and retards.\n\nProtected by [kiku](t.me/kikusupport)"
             )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"menu")))
@@ -379,7 +377,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
     helpable_plugins = sorted(helpable_plugins)
     modules = [
         custom.Button.inline(
-            "{} {} {}".format(lion, x, lion), data="us_plugin_{}".format(x)
+            "{} {} {}".format(kiku, kiku), data="us_plugin_{}".format(x)
         )
         for x in helpable_plugins
     ]
