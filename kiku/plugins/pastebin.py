@@ -5,8 +5,8 @@ from datetime import datetime
 
 import requests
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
 def progress(current, total):
@@ -17,8 +17,8 @@ def progress(current, total):
     )
 
 
-@Lion.on(admin_cmd(pattern="paste ?(.*)"))
-@Lion.on(sudo_cmd(pattern="paste ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="paste ?(.*)"))
+@kiku.on(sudo_cmd(pattern="paste ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
