@@ -4,9 +4,9 @@
 import time
 from datetime import datetime
 
-from Lion import CMD_HELP
-from Lion.__init__ import StartTime
-from Lion.plugins import ALIVE_NAME, OWNER_ID
+from kiku import CMD_HELP
+from kiku.__init__ import StartTime
+from kiku.plugins import ALIVE_NAME, OWNER_ID
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ℓιση υsεя"
 
@@ -42,8 +42,8 @@ def get_readable_time(seconds: int) -> str:
 # @command(pattern="^.ping$")
 
 
-@Lion.on(admin_cmd(pattern="ping$"))
-@Lion.on(sudo_cmd(pattern="ping$", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="ping$"))
+@kiku.on(sudo_cmd(pattern="ping$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -53,7 +53,7 @@ async def _(event):
     ms = (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - StartTime))
     await x.edit(
-        f"█░░ █ █▀█ █▄░█\n█▄▄ █ █▄█ █░▀█\n\n✘ **ριиg** : `{ms}`\n✘ **υρтιмє** : `{uptime}`\n✘ **𝐌𝐘 𝐏𝐄𝐑𝐎 𝐌𝐀𝐒𝐓𝐄𝐑** : [{DEFAULTUSER}](tg://user?id={OWNER_ID})\n\n© 𝙻𝙸𝙾𝙽 𝚇 𝚄𝚂𝙴𝚁𝙱𝙾𝚃"
+        f"█░░ █ █▀█ █▄░█\n█▄▄ █ █▄█ █░▀█\n\n✘ **ριиg** : `{ms}`\n✘ **υρтιмє** : `{uptime}`\n✘ **𝐌𝐘 𝐏𝐄𝐑𝐎 𝐌𝐀𝐒𝐓𝐄𝐑** : [{DEFAULTUSER}](tg://user?id={OWNER_ID})\n\n© @Teamkiku"
     )
 
 
