@@ -1,4 +1,4 @@
-#  (c)2020 Lion
+#  (c)2020 kiku
 #
 # You may not use this plugin without proper authorship and consent from @LionSupport
 #
@@ -7,12 +7,12 @@
 import asyncio
 import os
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd, sudo_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd, sudo_cmd
 
 
-@Lion.on(admin_cmd(pattern="repack ?(.*)", outgoing=True))
-@Lion.on(sudo_cmd(pattern="repack ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="repack ?(.*)", outgoing=True))
+@kiku.on(sudo_cmd(pattern="repack ?(.*)", allow_sudo=True))
 async def _(event):
     a = await event.get_reply_message()
     input_str = event.pattern_match.group(1)
