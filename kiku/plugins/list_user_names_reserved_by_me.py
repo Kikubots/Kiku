@@ -3,11 +3,11 @@
 
 from telethon import functions
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern=r"listmyusernames", outgoing=True))
+@kiku.on(admin_cmd(pattern=r"listmyusernames", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
