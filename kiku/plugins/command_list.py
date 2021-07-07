@@ -4,11 +4,11 @@ import asyncio
 
 import requests
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="cmds", outgoing=True))
-@Lion.on(sudo_cmd(pattern="cmds", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="cmds", outgoing=True))
+@kiku.on(sudo_cmd(pattern="cmds", allow_sudo=True))
 async def install(event):
     if event.fwd_from:
         return
