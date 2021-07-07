@@ -11,11 +11,11 @@ import barcode
 from barcode.writer import ImageWriter
 from uniborg.util import admin_cmd
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="barcode ?(.*)"))
-@Lion.on(sudo_cmd(pattern="barcode ?(.*)"))
+@kiku.on(admin_cmd(pattern="barcode ?(.*)"))
+@kiku.on(sudo_cmd(pattern="barcode ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
