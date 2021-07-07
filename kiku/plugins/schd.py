@@ -2,11 +2,11 @@
 Syntax: .schd <time_in_seconds> ;=; <message to send>"""
 import asyncio
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="schd ?(.*)"))
+@kiku.on(admin_cmd(pattern="schd ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
