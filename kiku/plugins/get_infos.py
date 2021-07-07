@@ -9,12 +9,12 @@ from telethon.tl.types import (
 )
 from telethon.utils import pack_bot_file_id
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="get_ad?(m)in ?(.*)"))
-@Lion.on(sudo_cmd(pattern="get_ad?(m)in ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="get_ad?(m)in ?(.*)"))
+@kiku.on(sudo_cmd(pattern="get_ad?(m)in ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -67,8 +67,8 @@ async def _(event):
         await eor(event, mentions)
 
 
-@Lion.on(admin_cmd(pattern="get_id"))
-@Lion.on(sudo_cmd(pattern="get_id", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="get_id"))
+@kiku.on(sudo_cmd(pattern="get_id", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -94,8 +94,8 @@ async def _(event):
         await eor(event, "Current Chat ID: `{}`".format(str(event.chat_id)))
 
 
-@Lion.on(admin_cmd(pattern="get_bot ?(.*)"))
-@Lion.on(sudo_cmd(pattern="get_bot ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="get_bot ?(.*)"))
+@kiku.on(sudo_cmd(pattern="get_bot ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
