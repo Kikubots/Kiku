@@ -1,7 +1,7 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
 # Licensed under the Raphielscape Public License, Version 1.b (the "License");
 # you may not use this file except in compliance with the License.
-# @LionSupport
+# @teamkiku
 
 """ Userbot module containing various scrapers. """
 import os
@@ -13,15 +13,15 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 
-from Lion import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
-from Lion.utils import admin_cmd, sudo_cmd
+from kiku import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
+from kiku.utils import admin_cmd, sudo_cmd
 
 CARBONLANG = "auto"
 LANG = "en"
 
 
-@Lion.on(admin_cmd(pattern="carbon"))
-@Lion.on(sudo_cmd(pattern="carbon", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="carbon"))
+@kiku.on(sudo_cmd(pattern="carbon", allow_sudo=True))
 async def carbon_api(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
 
