@@ -4,12 +4,12 @@ import subprocess
 
 import requests
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="labstack ?(.*)"))
-@Lion.on(sudo_cmd(pattern="labstack ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="labstack ?(.*)"))
+@kiku.on(sudo_cmd(pattern="labstack ?(.*)", allow_sudo=True))
 async def labstack(event):
     if event.fwd_from:
         return
