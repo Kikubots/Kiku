@@ -1,4 +1,4 @@
-#  (c)2020 Lion
+#  (c)2020 kiku
 #
 # You may not use this plugin without proper authorship and consent from @LionSupport
 #
@@ -6,12 +6,12 @@
 #
 import os
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd, sudo_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd, sudo_cmd
 
 
-@Lion.on(admin_cmd(pattern=r"reveal", outgoing=True))
-@Lion.on(sudo_cmd(pattern=r"reveal"))
+@kiku.on(admin_cmd(pattern=r"reveal", outgoing=True))
+@kiku.on(sudo_cmd(pattern=r"reveal"))
 async def _(event):
     b = await event.client.download_media(await event.get_reply_message())
     a = open(b, "r")
