@@ -2,8 +2,8 @@ import os
 
 import requests
 
-from Lion import CMD_HELP, OCR_SPACE_API_KEY, TEMP_DOWNLOAD_DIRECTORY, bot
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP, OCR_SPACE_API_KEY, TEMP_DOWNLOAD_DIRECTORY, bot
+from kiku.utils import admin_cmd
 
 
 async def ocr_space_file(
@@ -36,8 +36,8 @@ async def ocr_space_file(
     return r.json()
 
 
-@Lion.on(admin_cmd(pattern="ocr(?: |$)(.*)", outgoing=True))
-@Lion.on(sudo_cmd(pattern="ocr(?: |$)(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="ocr(?: |$)(.*)", outgoing=True))
+@kiku.on(sudo_cmd(pattern="ocr(?: |$)(.*)", allow_sudo=True))
 async def ocr(event):
     await eor(event, "`Reading...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
