@@ -12,13 +12,13 @@ import bs4
 import requests
 from uniborg.util import admin_cmd
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 langi = "en"
 
 
-@Lion.on(admin_cmd(pattern="imdb (.*)"))
-@Lion.on(sudo_cmd(pattern="imdb (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="imdb (.*)"))
+@kiku.on(sudo_cmd(pattern="imdb (.*)", allow_sudo=True))
 async def imdb(e):
     abcd = await eor(e, "`Searching for the movie...`")
     try:
