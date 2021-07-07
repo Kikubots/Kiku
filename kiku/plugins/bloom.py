@@ -27,14 +27,14 @@ from pySmartDL import SmartDL
 from telethon.tl import functions
 from uniborg.util import admin_cmd
 
-from Lion import ALIVE_NAME, CMD_HELP
+from kiku import ALIVE_NAME, CMD_HELP
 
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 DEFAULTUSER = str(ALIVE_NAME)
 
 
-@Lion.on(admin_cmd(pattern="bloom ?(.*)"))
+@kiku.on(admin_cmd(pattern="bloom ?(.*)"))
 async def autopic(event):
     await event.edit("Bloom colour profile pic have been enabled")
     downloaded_file_name = "./ravana/original_pic.png"
