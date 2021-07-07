@@ -4,10 +4,10 @@ import io
 import sys
 import traceback
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="eval"))
+@kiku.on(admin_cmd(pattern="eval"))
 async def _(event):
     if event.fwd_from:
         return
