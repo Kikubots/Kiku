@@ -38,11 +38,11 @@ from PIL import Image, ImageEnhance, ImageOps
 from telethon.tl.types import DocumentAttributeFilename
 from uniborg.util import admin_cmd
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
-@Lion.on(sudo_cmd(pattern="deepfry(?: |$)(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
+@kiku.on(sudo_cmd(pattern="deepfry(?: |$)(.*)", allow_sudo=True))
 async def deepfryer(event):
     try:
         frycount = int(event.pattern_match.group(1))
