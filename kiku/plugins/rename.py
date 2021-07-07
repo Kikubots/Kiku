@@ -9,14 +9,14 @@ from datetime import datetime
 
 from uniborg.util import admin_cmd
 
-from Lion import CMD_HELP
-from Lion.LionConfig import Config
+from kiku import CMD_HELP
+from kiku.LionConfig import Config
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 
 
-@Lion.on(admin_cmd(pattern="rename (.*)"))
-@Lion.on(sudo_cmd(pattern="rename (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="rename (.*)"))
+@kiku.on(sudo_cmd(pattern="rename (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
