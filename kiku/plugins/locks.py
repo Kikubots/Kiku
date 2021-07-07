@@ -5,13 +5,13 @@ DB Options: bots, commands, email, forward, url"""
 
 from telethon import events, functions, types
 
-from Lion import CMD_HELP
-from Lion.plugins.sql_helper.locks_sql import get_locks, is_locked, update_lock
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.plugins.sql_helper.locks_sql import get_locks, is_locked, update_lock
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern=r"lock( (?P<target>\S+)|$)"))
-@Lion.on(sudo_cmd(pattern=r"lock( (?P<target>\S+)|$)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=r"lock( (?P<target>\S+)|$)"))
+@kiku.on(sudo_cmd(pattern=r"lock( (?P<target>\S+)|$)", allow_sudo=True))
 async def _(event):
     # Space weirdness in regex required because argument is optional and other
     # commands start with ".lock"
@@ -87,8 +87,8 @@ async def _(event):
             )
 
 
-@Lion.on(admin_cmd(pattern="unlock ?(.*)"))
-@Lion.on(sudo_cmd(pattern="unlock ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="unlock ?(.*)"))
+@kiku.on(sudo_cmd(pattern="unlock ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -101,8 +101,8 @@ async def _(event):
         await eor(event, "Use `.lock` without any parameters to unlock API locks")
 
 
-@Lion.on(admin_cmd(pattern="currenabledlocks"))
-@Lion.on(sudo_cmd(pattern="currenabledlocks", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="currenabledlocks"))
+@kiku.on(sudo_cmd(pattern="currenabledlocks", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -137,8 +137,8 @@ async def _(event):
     await eor(event, res)
 
 
-@Lion.on(events.MessageEdited())  # pylint:disable=E0602
-@Lion.on(events.NewMessage())  # pylint:disable=E0602
+@kiku.on(events.MessageEdited())  # pylint:disable=E0602
+@kiku.on(events.NewMessage())  # pylint:disable=E0602
 async def check_incoming_messages(event):
     # TODO: exempt admins from locks
     peer_id = event.chat_id
@@ -200,7 +200,7 @@ async def check_incoming_messages(event):
                 update_lock(peer_id, "url", False)
 
 
-@Lion.on(events.ChatAction())  # pylint:disable=E0602
+@kiku.on(events.ChatAction())  # pylint:disable=E0602
 async def _(event):
     # TODO: exempt admins from locks
     # check for "lock" "bots"
