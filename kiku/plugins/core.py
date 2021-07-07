@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -21,8 +21,8 @@ from pathlib import Path
 
 from telethon.tl.types import InputMessagesFilterDocument
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd, load_module, remove_plugin
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd, load_module, remove_plugin
 
 from .. import ALIVE_NAME
 
@@ -31,8 +31,8 @@ thumb_image_path = "./resources/Lion.jpg"
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Lion User"
 
 
-@Lion.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
-@Lion.on(sudo_cmd(pattern=r"send (?P<shortname>\w+)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
+@kiku.on(sudo_cmd(pattern=r"send (?P<shortname>\w+)", allow_sudo=True))
 async def send(event):
     ok = await eor(event, "Sending...")
     if event.fwd_from:
@@ -64,7 +64,7 @@ async def send(event):
 
 
 
-@Lion.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
+@kiku.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
 async def unload(event):
     if event.fwd_from:
         return
@@ -79,7 +79,7 @@ async def unload(event):
 
 
 
-@Lion.on(admin_cmd(pattern="install"))
+@kiku.on(admin_cmd(pattern="install"))
 async def install(event):
     if event.fwd_from:
         return
@@ -111,7 +111,7 @@ async def install(event):
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
 
-@Lion.on(admin_cmd(pattern=r"installall$"))
+@kiku.on(admin_cmd(pattern=r"installall$"))
 async def install(event):
     if event.fwd_from:
         return
@@ -150,7 +150,7 @@ async def install(event):
         await b.delete()
         
 
-@Lion.on(admin_cmd(pattern=r"load (?P<shortname>\w+)$"))
+@kiku.on(admin_cmd(pattern=r"load (?P<shortname>\w+)$"))
 async def load(event):
     if event.fwd_from:
         return
