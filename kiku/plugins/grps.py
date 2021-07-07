@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -19,7 +19,7 @@ import requests
 from . import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="grpcnt ?(.*)"))
+@kiku.on(admin_cmd(pattern="grpcnt ?(.*)"))
 async def counter(tele):
     chat = tele.pattern_match.group(1)
     if not tele.is_private:
