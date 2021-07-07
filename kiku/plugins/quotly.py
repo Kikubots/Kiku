@@ -7,8 +7,8 @@ from uniborg.util import admin_cmd
 from Lion import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="qbot ?(.*)"))
-@Lion.on(sudo_cmd(pattern="qbot ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="qbot ?(.*)"))
+@kiku.on(sudo_cmd(pattern="qbot ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
