@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -16,12 +16,12 @@
 
 import asyncio
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 # By @HeisenbergTheDanger, @its_xditya
 
 
-@Lion.on(admin_cmd("superfban ?(.*)"))
+@kiku.on(admin_cmd("superfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -144,9 +144,9 @@ async def _(event):
             await Lion.send_message(chat, f"{fed} Excluded.")
             exCount += 1
             continue
-        await Lion.send_message(chat, f"/joinfed {fed}")
+        await kiku.send_message(chat, f"/joinfed {fed}")
         await asyncio.sleep(3)
-        await Lion.send_message(chat, f"/fban {FBAN} {REASON}")
+        await kiku.send_message(chat, f"/fban {FBAN} {REASON}")
         await asyncio.sleep(3)
     await event.edit(
         f"SuperFBan Completed. Affected {len(fedList) - exCount} feds.\n#TB"
@@ -156,7 +156,7 @@ async def _(event):
 # By @HeisenbergTheDanger, @its_xditya
 
 
-@Lion.on(admin_cmd("superunfban ?(.*)"))
+@kiku.on(admin_cmd("superunfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -220,9 +220,9 @@ async def _(event):
         return
     await asyncio.sleep(5)
     for fed in fedList:
-        await Lion.send_message(chat, f"/joinfed {fed}")
+        await kiku.send_message(chat, f"/joinfed {fed}")
         await asyncio.sleep(5)
-        await Lion.send_message(chat, f"/unfban {FBAN}")
+        await kiku.send_message(chat, f"/unfban {FBAN}")
         await asyncio.sleep(5)
     await event.edit(f"SuperUnFBan Completed. Affected {len(fedList)} feds.\n#TB")
 
@@ -235,6 +235,6 @@ CMD_HELP.update(
         \n**Usage**: Mass-Ban in all feds you are admin in.\
         \nSet `EXCLUDE_FED fedid1|fedid2` in heroku vars to exclude those feds.\
         \nSet var `FBAN_GROUP_ID` to the group with rose, where you want FBan to take place.\
-        \n\nGet help - @LionSupport."
+        \n\nGet help - @kikusupport."
     }
 )
