@@ -2,12 +2,12 @@
 Syntax: .cpin [LOUD]"""
 from telethon.tl import functions
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="cpin ?(.*)"))
-@Lion.on(sudo_cmd(pattern="cpin ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="cpin ?(.*)"))
+@kiku.on(sudo_cmd(pattern="cpin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
