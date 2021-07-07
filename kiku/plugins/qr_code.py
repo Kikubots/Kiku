@@ -19,8 +19,8 @@ def progress(current, total):
     )
 
 
-@Lion.on(admin_cmd(pattern="getqr"))
-@Lion.on(sudo_cmd(pattern="getqr", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="getqr"))
+@kiku.on(sudo_cmd(pattern="getqr", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -68,8 +68,8 @@ async def _(event):
     await eor(event, qr_contents)
 
 
-@Lion.on(admin_cmd(pattern="makeqr ?(.*)"))
-@Lion.on(sudo_cmd(pattern="makeqr ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="makeqr ?(.*)"))
+@kiku.on(sudo_cmd(pattern="makeqr ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
