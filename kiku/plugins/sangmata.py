@@ -1,15 +1,15 @@
-# Made For DARK COBRA and Lion...
+# Made For DARK COBRA and kiku...
 # Made by team cobra with @xditya
 # Retrieves the name history and the username history of the replied user..
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="sg ?(.*)"))
-@Lion.on(sudo_cmd(pattern="sg ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="sg ?(.*)"))
+@kiku.on(sudo_cmd(pattern="sg ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
