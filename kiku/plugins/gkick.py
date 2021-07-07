@@ -1,8 +1,8 @@
 from . import *
 
 
-@Lion.on(admin_cmd(pattern=r"gkick ?(.*)"))
-@Lion.on(sudo_cmd(pattern=r"gkick ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=r"gkick ?(.*)"))
+@kiku.on(sudo_cmd(pattern=r"gkick ?(.*)", allow_sudo=True))
 async def gkick(event):
     hell = await eor(event, "`gℓσвαℓℓү кιcкιηg...`")
     if event.reply_to_msg_id:
