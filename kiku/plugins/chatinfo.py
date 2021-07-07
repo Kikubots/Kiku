@@ -19,12 +19,12 @@ from telethon.tl.functions.messages import GetFullChatRequest, GetHistoryRequest
 from telethon.tl.types import ChannelParticipantsAdmins, MessageActionChannelMigrateFrom
 from telethon.utils import get_input_location
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd, sudo_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd, sudo_cmd
 
 
-@Lion.on(admin_cmd(pattern="chatinfo(?: |$)(.*)", outgoing=True))
-@Lion.on(sudo_cmd(pattern="chatinfo(?: |$)(.*)"))
+@kiku.on(admin_cmd(pattern="chatinfo(?: |$)(.*)", outgoing=True))
+@kiku.on(sudo_cmd(pattern="chatinfo(?: |$)(.*)"))
 async def info(event):
     ok = await eor(event, "`αηαℓүsιηg тнε cнαт...`")
     chat = await get_chatinfo(event)
