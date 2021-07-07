@@ -11,11 +11,11 @@ from datetime import datetime
 
 from gtts import gTTS
 
-from Lion.utils import admin_cmd
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="tts (.*)"))
-@Lion.on(sudo_cmd(pattern="tts (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="tts (.*)"))
+@kiku.on(sudo_cmd(pattern="tts (.*)", allow_sudo=True))
 async def _(event):
 
     if event.fwd_from:
