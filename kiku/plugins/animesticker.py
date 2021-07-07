@@ -3,8 +3,8 @@
 import random
 import re
 
-from Lion import CMD_HELP, bot
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP, bot
+from kiku.utils import admin_cmd
 
 EMOJI_PATTERN = re.compile(
     "["
@@ -28,8 +28,8 @@ def deEmojify(inputString: str) -> str:
     return re.sub(EMOJI_PATTERN, "", inputString)
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="waifu(?: |$)(.*)"))
-@Lion.on(sudo_cmd(pattern="waifu(?: |$)(.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern="waifu(?: |$)(.*)"))
+@kiku.on(sudo_cmd(pattern="waifu(?: |$)(.*)"))
 async def waifu(animu):
     # """Creates random anime sticker!"""
 
