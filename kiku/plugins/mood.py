@@ -4,15 +4,15 @@
 #
 from telethon.tl import functions
 
-from Lion import ALIVE_NAME, CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import ALIVE_NAME, CMD_HELP
+from kiku.utils import admin_cmd
 
-TELENAME = ALIVE_NAME if ALIVE_NAME else "Lion"
+TELENAME = ALIVE_NAME if ALIVE_NAME else "kiku"
 
 # set your mood
 
 
-@Lion.on(admin_cmd(pattern="mood ((.|\n)*)"))  # pylint:disable=E0602,W0703
+@kiku.on(admin_cmd(pattern="mood ((.|\n)*)"))  # pylint:disable=E0602,W0703
 async def _(event):
     if event.fwd_from:
         return
@@ -33,7 +33,7 @@ async def _(event):
 # reset back
 
 
-@Lion.on(admin_cmd(pattern="resetmood"))  # pylint:disable=E0602,W0703
+@kiku.on(admin_cmd(pattern="resetmood"))  # pylint:disable=E0602,W0703
 async def _(event):
     if event.fwd_from:
         return
