@@ -9,14 +9,14 @@ import os
 import shutil
 from re import findall
 
-from Lion.utils import admin_cmd
+from kiku.utils import admin_cmd
 
-from Lion import CMD_HELP
-from Lion.google_images_download import googleimagesdownload
+from kiku import CMD_HELP
+from kiku.google_images_download import googleimagesdownload
 
 
-@Lion.on(admin_cmd(pattern="img ?(.*)"))
-@Lion.on(sudo_cmd(pattern="img ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="img ?(.*)"))
+@kiku.on(sudo_cmd(pattern="img ?(.*)", allow_sudo=True))
 async def img_sampler(event):
     await eor(event, "`Processing ...`")
     reply = await event.get_reply_message()
