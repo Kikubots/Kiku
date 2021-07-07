@@ -10,12 +10,12 @@ import re
 
 from telethon import events
 
-import Lion.plugins.sql_helper.blacklist_sql as sql
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+import kiku.plugins.sql_helper.blacklist_sql as sql
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(events.NewMessage(incoming=True))
+@kiku.on(events.NewMessage(incoming=True))
 async def on_new_message(event):
     # TODO: exempt admins from locks
     name = event.raw_text
@@ -31,8 +31,8 @@ async def on_new_message(event):
             break
 
 
-@Lion.on(admin_cmd(pattern="addblacklist ((.|\n)*)"))
-@Lion.on(sudo_cmd(pattern="addblacklist ((.|\n)*)"))
+@kiku.on(admin_cmd(pattern="addblacklist ((.|\n)*)"))
+@kiku.on(sudo_cmd(pattern="addblacklist ((.|\n)*)"))
 async def on_add_black_list(event):
     text = event.pattern_match.group(1)
     to_blacklist = list(
@@ -48,8 +48,8 @@ async def on_add_black_list(event):
     )
 
 
-@Lion.on(admin_cmd(pattern="listblacklist"))
-@Lion.on(sudo_cmd(pattern="listblacklist"))
+@kiku.on(admin_cmd(pattern="listblacklist"))
+@kiku.on(sudo_cmd(pattern="listblacklist"))
 async def on_view_blacklist(event):
     all_blacklisted = sql.get_chat_blacklist(event.chat_id)
     OUT_STR = "Blacklists in the Current Chat:\n"
@@ -74,8 +74,8 @@ async def on_view_blacklist(event):
         await eor(event, OUT_STR)
 
 
-@Lion.on(admin_cmd(pattern="rmblacklist ((.|\n)*)"))
-@Lion.on(sudo_cmd(pattern="rmblacklist ((.|\n)*)"))
+@kiku.on(admin_cmd(pattern="rmblacklist ((.|\n)*)"))
+@kiku.on(sudo_cmd(pattern="rmblacklist ((.|\n)*)"))
 async def on_delete_blacklist(event):
     text = event.pattern_match.group(1)
     to_unblacklist = list(
