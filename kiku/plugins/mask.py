@@ -2,11 +2,11 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from uniborg.util import admin_cmd
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="mask ?(.*)"))
-@Lion.on(sudo_cmd(pattern="mask ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="mask ?(.*)"))
+@kiku.on(sudo_cmd(pattern="mask ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
