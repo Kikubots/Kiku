@@ -1,8 +1,8 @@
-# (c) @LionHelp
+# (c) @teamkiku
 # By @xditya. Kangers keep credits xD
 # All in one code.
 
-"""Lion
+"""kiku
 Available Commands:
 .tlol
 .lol
@@ -17,13 +17,13 @@ from collections import deque
 
 from telethon import events
 
-from Lion import ALIVE_NAME
-from Lion.utils import admin_cmd
+from kiku import ALIVE_NAME
+from kiku.utils import admin_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Lion"
 
 
-@Lion.on(admin_cmd(pattern=r"candy"))
+@kiku.on(admin_cmd(pattern=r"candy"))
 async def _(event):
     if event.fwd_from:
         return
@@ -37,7 +37,7 @@ async def _(event):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(pattern=r"nothappy"))
+@kiku.on(admin_cmd(pattern=r"nothappy"))
 async def _(event):
     if event.fwd_from:
         return
@@ -65,7 +65,7 @@ async def _(event):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(pattern=r"tlol"))
+@kiku.on(admin_cmd(pattern=r"tlol"))
 async def _(event):
     if event.fwd_from:
         return
@@ -79,7 +79,7 @@ async def _(event):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(pattern=r"lol"))
+@kiku.on(admin_cmd(pattern=r"lol"))
 async def _(event):
     if event.fwd_from:
         return
@@ -93,7 +93,7 @@ async def _(event):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(pattern=r"police"))
+@kiku.on(admin_cmd(pattern=r"police"))
 async def _(event):
 
     if event.fwd_from:
@@ -131,7 +131,7 @@ async def _(event):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(pattern=f"smoon", outgoing=True))
+@kiku.on(admin_cmd(pattern=f"smoon", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -167,7 +167,7 @@ async def _(event):
 
 
 # By @xditya. Kangers keep credits xD
-@Lion.on(admin_cmd(pattern=f"tmoon", outgoing=True))
+@kiku.on(admin_cmd(pattern=f"tmoon", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -229,7 +229,7 @@ async def _(event):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(pattern="loveu", outgoing=True))
+@kiku.on(admin_cmd(pattern="loveu", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -291,7 +291,7 @@ async def _(event):
         await event.edit(animation_chars[i % 117])
 
 
-@Lion.on(admin_cmd(pattern=f"plane", outgoing=True))
+@kiku.on(admin_cmd(pattern=f"plane", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -317,7 +317,7 @@ async def _(event):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(pattern=r"police"))
+@kiku.on(admin_cmd(pattern=r"police"))
 async def _(event):
 
     if event.fwd_from:
@@ -355,7 +355,7 @@ async def _(event):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(pattern=f"rain", outgoing=True))
+@kiku.on(admin_cmd(pattern=f"rain", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -369,7 +369,7 @@ async def _(event):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(pattern=f"snake", outgoing=True))
+@kiku.on(admin_cmd(pattern=f"snake", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -418,7 +418,7 @@ async def _(event):
         await event.edit(animation_chars[i % 27])
 
 
-@Lion.on(admin_cmd(pattern=f"solarsystem", outgoing=True))
+@kiku.on(admin_cmd(pattern=f"solarsystem", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -577,7 +577,7 @@ async def _(event):
         await event.edit(animation_chars[i % 549755813888])
 
 
-@Lion.on(admin_cmd(pattern=r"bfly", outgoing=True))
+@kiku.on(admin_cmd(pattern=r"bfly", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -591,7 +591,7 @@ async def _(event):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(pattern=f"virus", outgoing=True))
+@kiku.on(admin_cmd(pattern=f"virus", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -651,7 +651,7 @@ async def _(event):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="lul"))
+@kiku.on(admin_cmd(outgoing=True, pattern="lul"))
 async def join(e):
 
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
@@ -664,7 +664,7 @@ async def join(e):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="yes"))
+@kiku.on(admin_cmd(outgoing=True, pattern="yes"))
 async def join(e):
 
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
@@ -677,7 +677,7 @@ async def join(e):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="gn"))
+@kiku.on(admin_cmd(outgoing=True, pattern="gn"))
 async def join(e):
 
     await e.edit(
@@ -688,7 +688,7 @@ async def join(e):
 # By @xditya. Kangers keep credits xD
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="gm"))
+@kiku.on(admin_cmd(outgoing=True, pattern="gm"))
 async def join(e):
     if "gmute" in e.text:
         return
@@ -697,7 +697,7 @@ async def join(e):
     )
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="like"))
+@kiku.on(admin_cmd(outgoing=True, pattern="like"))
 async def join(e):
 
     await e.edit(
@@ -705,7 +705,7 @@ async def join(e):
     )
 
 
-@Lion.on(admin_cmd(pattern=r"plane", outgoing=True))
+@kiku.on(admin_cmd(pattern=r"plane", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -728,7 +728,7 @@ async def _(event):
     await event.delete()
 
 
-@Lion.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+@kiku.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -776,7 +776,7 @@ async def _(event):
 @arnab431"""
 
 
-@Lion.on(admin_cmd("(.*)"))
+@kiku.on(admin_cmd("(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -811,7 +811,7 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
 
-@Lion.on(admin_cmd("(.*)"))
+@kiku.on(admin_cmd("(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -846,7 +846,7 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
 
-@Lion.on(admin_cmd("(.*)"))
+@kiku.on(admin_cmd("(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -880,7 +880,7 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
 
-@Lion.on(admin_cmd("(.*)"))
+@kiku.on(admin_cmd("(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -917,7 +917,7 @@ async def _(event):
 # Originally created By KingMars ✅ Rain Sequence 2 {Updated}
 
 
-@Lion.on(admin_cmd(pattern=r"km_rain2", outgoing=True))
+@kiku.on(admin_cmd(pattern=r"km_rain2", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -933,7 +933,7 @@ async def _(event):
 # (c) @INF1N17Y
 
 
-@Lion.on(admin_cmd(pattern=r"react (.*)", outgoing=True))
+@kiku.on(admin_cmd(pattern=r"react (.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -1077,7 +1077,7 @@ for art in ascii:
     unpacked_ascii += f"{art}\n"
 
 
-@Lion.on(admin_cmd(pattern="oof ?(.*)"))
+@kiku.on(admin_cmd(pattern="oof ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -1097,7 +1097,7 @@ async def _(event):
     await event.edit(output)
 
 
-@Lion.on(admin_cmd(pattern="hek ?(.*)"))
+@kiku.on(admin_cmd(pattern="hek ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -1108,7 +1108,7 @@ async def _(event):
     await event.edit(";_;")
 
 
-@Lion.on(admin_cmd(pattern="sed ?(.*)"))
+@kiku.on(admin_cmd(pattern="sed ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -1120,7 +1120,7 @@ async def _(event):
     await event.edit(":/")
 
 
-@Lion.on(admin_cmd(pattern="emoji ?(.*)"))
+@kiku.on(admin_cmd(pattern="emoji ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -1132,7 +1132,7 @@ async def _(event):
         await event.edit("Emoji not found!")
 
 
-@Lion.on(admin_cmd(pattern="repeat ?(.*)"))
+@kiku.on(admin_cmd(pattern="repeat ?(.*)"))
 async def _(event):
     message = event.text[10:]
     count = int(event.text[8:10])
