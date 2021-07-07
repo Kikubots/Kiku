@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -35,13 +35,13 @@ from youtube_dl.utils import (
 )
 from youtubesearchpython import SearchVideos
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="song (.*)"))
+@kiku.on(admin_cmd(pattern="song (.*)"))
 async def download_video(Lion):
     x = await eor(Lion, "ѕєαя¢нιиg...")
-    url = Lion.pattern_match.group(1)
+    url = kiku.pattern_match.group(1)
     if not url:
         return await x.edit("**Error**\nUsage - `.song <song name>`")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
@@ -136,7 +136,7 @@ By - {}
     os.remove(f"{rip_data['id']}.mp3")
 
 
-@Lion.on(admin_cmd(pattern="vsong (.*)"))
+@kiku.on(admin_cmd(pattern="vsong (.*)"))
 async def download_video(Lion):
     x = await eor(Lion, "Processing..")
     url = Lion.pattern_match.group(1)
@@ -214,7 +214,7 @@ By - {}
     )
     await x.edit(f"`{upteload}`")
     await borg.send_file(
-        Lion.chat_id,
+        kiku.chat_id,
         f"{rip_data['id']}.mp4",
         supports_streaming=True,
         caption=f"✘ Sᴏɴɢ - {rip_data['title']}\n✘ Bʏ - {rip_data['uploader']}\n",
