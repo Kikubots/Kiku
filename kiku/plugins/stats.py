@@ -4,8 +4,8 @@ from telethon.events import NewMessage
 from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd, edit_or_reply, sudo_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="stats$"))
@@ -78,7 +78,7 @@ async def stats(
     response += (
         f"**❅** 🔻 **υияєα∂ мєитισиѕ:** `{unread_mentions}` ✘\n**❅──────✧❅✦❅✧──────❅**\n"
     )
-    response += f"⚡️ **ρσωєяє∂ ву [𝑇𝑒𝑎𝑚 𝐿𝑖𝑜𝑛](t.me/LionXUpdates)** ⚡️"
+    response += f"⚡️ **ρσωєяє∂ ву [Team kiku](t.me/LionXUpdates)** ⚡️"
     await alain.edit(response)
 
 
