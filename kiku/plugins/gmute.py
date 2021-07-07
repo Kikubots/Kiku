@@ -1,12 +1,12 @@
 import asyncio
 
-from Lion import CMD_HELP
-from Lion.plugins.sql_helper.mute_sql import is_muted, mute, unmute
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.plugins.sql_helper.mute_sql import is_muted, mute, unmute
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern=r"gmute ?(\d+)?"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern=r"gmute ?(\d+)?"))
+@kiku.on(admin_cmd(outgoing=True, pattern=r"gmute ?(\d+)?"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern=r"gmute ?(\d+)?"))
 async def startgmute(event):
     private = False
     if event.fwd_from:
@@ -38,8 +38,8 @@ async def startgmute(event):
         await eor(event, "Silence now. **ѕυ¢¢єѕѕfυℓℓу fυ¢кє∂ тнιѕ иιggα мσυтн**")
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern=r"ungmute ?(\d+)?"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern=r"ungmute ?(\d+)?"))
+@kiku.on(admin_cmd(outgoing=True, pattern=r"ungmute ?(\d+)?"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern=r"ungmute ?(\d+)?"))
 async def endgmute(event):
     private = False
     if event.fwd_from:
