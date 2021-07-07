@@ -3,8 +3,8 @@ import re
 
 import requests
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
 async def callAPI(search_str):
@@ -71,7 +71,7 @@ async def formatJSON(outData):
         return msg
 
 
-@Lion.on(admin_cmd(pattern="anime ?(.*)"))
+@kiku.on(admin_cmd(pattern="anime ?(.*)"))
 async def anilist(event):
     if event.fwd_from:
         return
