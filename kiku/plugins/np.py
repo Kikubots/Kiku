@@ -6,10 +6,10 @@ Available Commands:
 
 import asyncio
 
-from Lion.utils import admin_cmd
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="np"))
+@kiku.on(admin_cmd(pattern="np"))
 async def _(event):
     if event.fwd_from:
         return
