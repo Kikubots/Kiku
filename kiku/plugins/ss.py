@@ -4,7 +4,7 @@ from telethon import functions
 from uniborg.util import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="ss"))
+@kiku.on(admin_cmd(pattern="ss"))
 async def _(event):
     if event.fwd_from:
         return
