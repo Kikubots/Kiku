@@ -2,10 +2,10 @@ import sys
 
 from telethon import __version__, functions
 
-from Lion.utils import admin_cmd
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="mf ?(.*)"))  # pylint:disable=E0602
+@kiku.on(admin_cmd(pattern="mf ?(.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -57,7 +57,7 @@ async def _(event):
         await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
+@kiku.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -65,7 +65,7 @@ async def _(event):
     await event.edit(result.stringify())
 
 
-@Lion.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
+@kiku.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
