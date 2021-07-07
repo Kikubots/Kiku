@@ -34,8 +34,8 @@ from uniborg.util import admin_cmd
 from Lion import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="unbanall ?(.*)"))
-@Lion.on(sudo_cmd(pattern="unbanall ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="unbanall ?(.*)"))
+@kiku.on(sudo_cmd(pattern="unbanall ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -65,8 +65,8 @@ async def _(event):
         await eor(event, "{}: {} unbanned".format(event.chat_id, p))
 
 
-@Lion.on(admin_cmd(pattern="skick ?(.*)"))
-@Lion.on(sudo_cmd(pattern="skick ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="skick ?(.*)"))
+@kiku.on(sudo_cmd(pattern="skick ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
