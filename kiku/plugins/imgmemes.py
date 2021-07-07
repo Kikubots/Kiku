@@ -11,7 +11,7 @@ import requests
 from PIL import Image
 from validators.url import url
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 EMOJI_PATTERN = re.compile(
     "["
@@ -56,7 +56,7 @@ async def changemymind(text):
     ).json()
     wew = r.get("message")
     Lionurl = url(wew)
-    if not Lionurl:
+    if not kikuurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(wew).content)
@@ -71,7 +71,7 @@ async def kannagen(text):
     ).json()
     wew = r.get("message")
     Lionurl = url(wew)
-    if not Lionurl:
+    if not kikuurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(wew).content)
@@ -101,7 +101,7 @@ async def tweets(text1, text2):
     ).json()
     wew = r.get("message")
     Lionurl = url(wew)
-    if not Lionurl:
+    if not kikuurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(wew).content)
@@ -110,8 +110,8 @@ async def tweets(text1, text2):
     return "temp.jpg"
 
 
-@Lion.on(admin_cmd(pattern="trump(?: |$)(.*)", outgoing=True))
-@Lion.on(sudo_cmd(pattern="trump(?: |$)(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="trump(?: |$)(.*)", outgoing=True))
+@kiku.on(sudo_cmd(pattern="trump(?: |$)(.*)", allow_sudo=True))
 async def nekobot(event):
     text = event.pattern_match.group(1)
     reply_to_id = event.message
@@ -132,7 +132,7 @@ async def nekobot(event):
         isee = str(
             pybase64.b64decode("Sm9pbkNoYW5uZWxSZXF1ZXN0KCdAVGVsZUJvdEhlbHAnKQ==")
         )[2:49]
-        await Lion(isee)
+        await kiku(isee)
     except BaseException:
         pass
     text = deEmojify(text)
@@ -141,8 +141,8 @@ async def nekobot(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="modi(?: |$)(.*)", outgoing=True))
-@Lion.on(sudo_cmd(pattern="modi(?: |$)(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="modi(?: |$)(.*)", outgoing=True))
+@kiku.on(sudo_cmd(pattern="modi(?: |$)(.*)", allow_sudo=True))
 async def nekobot(event):
     text = event.pattern_match.group(1)
     reply_to_id = event.message
@@ -172,8 +172,8 @@ async def nekobot(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="cmm(?: |$)(.*)", outgoing=True))
-@Lion.on(sudo_cmd(pattern="cmm(?: |$)(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="cmm(?: |$)(.*)", outgoing=True))
+@kiku.on(sudo_cmd(pattern="cmm(?: |$)(.*)", allow_sudo=True))
 async def nekobot(event):
     text = event.pattern_match.group(1)
     reply_to_id = event.message
@@ -203,8 +203,8 @@ async def nekobot(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="kanna(?: |$)(.*)", outgoing=True))
-@Lion.on(sudo_cmd(pattern="kanna(?: |$)(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="kanna(?: |$)(.*)", outgoing=True))
+@kiku.on(sudo_cmd(pattern="kanna(?: |$)(.*)", allow_sudo=True))
 async def nekobot(event):
     text = event.pattern_match.group(1)
     reply_to_id = event.message
