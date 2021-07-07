@@ -2,11 +2,11 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="scan ?(.*)"))
-@Lion.on(sudo_cmd(pattern="scan ?(.*)"))
+@kiku.on(admin_cmd(pattern="scan ?(.*)"))
+@kiku.on(sudo_cmd(pattern="scan ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
