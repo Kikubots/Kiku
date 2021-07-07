@@ -8,8 +8,8 @@ import time
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 DEL_TIME_OUT = 60
 
