@@ -8,11 +8,11 @@ Available Commands:
 import emoji
 from googletrans import Translator
 
-from Lion import CMD_HELP, CMD_HNDLR
+from kiku import CMD_HELP, CMD_HNDLR
 
 
-@Lion.on(admin_cmd(pattern="tr ?(.*)"))
-@Lion.on(sudo_cmd(pattern="tr ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="tr ?(.*)"))
+@kiku.on(sudo_cmd(pattern="tr ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
