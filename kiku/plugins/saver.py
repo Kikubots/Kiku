@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -21,9 +21,9 @@ from asyncio import sleep
 
 from telethon import events
 
-from Lion import CMD_HELP
-from Lion.LionConfig import Var
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.LionConfig import Var
+from kiku.utils import admin_cmd
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.WARN
@@ -35,8 +35,8 @@ BOTLOG = True
 BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern=r"save(?: |$)([\s\S]*)"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern=r"save(?: |$)([\s\S]*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern=r"save(?: |$)([\s\S]*)"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern=r"save(?: |$)([\s\S]*)"))
 async def log(log_text):
     """For .log command, forwards a message or the command argument to the bot logs group"""
     if BOTLOG:
@@ -59,7 +59,7 @@ async def log(log_text):
     await log_text.delete()
 
 
-@Lion.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
+@kiku.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def monito_p_m_s(event):
     sender = await event.get_sender()
     if Config.NC_LOG_P_M_S and not sender.bot:
