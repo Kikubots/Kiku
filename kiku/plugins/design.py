@@ -1,11 +1,11 @@
 """.admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="join"))
+@kiku.on(admin_cmd(pattern="join"))
 async def _(event):
     if event.fwd_from:
         return
@@ -22,7 +22,7 @@ async def _(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="pay"))
+@kiku.on(admin_cmd(pattern="pay"))
 async def _(event):
     if event.fwd_from:
         return
