@@ -8,11 +8,11 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="mmf ?(.*)"))
+@kiku.on(admin_cmd(pattern="mmf ?(.*)"))
 async def handler(event):
     if event.fwd_from:
         return
