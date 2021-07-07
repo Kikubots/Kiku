@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 
-# Re-written by @its_xditya for Lion
+# Re-written by @its_xditya for kiku
 
 """ Userbot module containing various sites direct links generators"""
 
@@ -44,8 +44,8 @@ def subprocess_run(cmd):
     return talk
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern=r"direct(?: |$)([\s\S]*)"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern=r"direct(?: |$)([\s\S]*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern=r"direct(?: |$)([\s\S]*)"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern=r"direct(?: |$)([\s\S]*)"))
 async def direct_link_generator(request):
     """direct links generator"""
     await eor(request, "`Processing...`")
