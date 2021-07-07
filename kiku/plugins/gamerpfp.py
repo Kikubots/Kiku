@@ -15,7 +15,7 @@ import requests
 from telethon.tl import functions
 from uniborg.util import admin_cmd
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 COLLECTION_STRING = [
     "star-wars-wallpaper-1080p",
@@ -54,7 +54,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@Lion.on(admin_cmd(pattern="gamerpfp ?(.*)"))
+@kiku.on(admin_cmd(pattern="gamerpfp ?(.*)"))
 async def main(event):
 
     # Owner @NihiNivi
