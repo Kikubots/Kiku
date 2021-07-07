@@ -20,8 +20,8 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from Lion import CMD_HELP, bot
-from Lion.LionConfig import Var
+from kiku import CMD_HELP, bot
+from kiku.LionConfig import Var
 
 KANGING_STR = [
     "Using Witchery to kang this sticker...",
@@ -39,8 +39,8 @@ KANGING_STR = [
 telename = Var.CUSTOM_STICKER_PACK_NAME
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="kang"))
-@Lion.on(sudo_cmd(pattern="kang", allow_sudo=True))
+@kiku.on(admin_cmd(outgoing=True, pattern="kang"))
+@kiku.on(sudo_cmd(pattern="kang", allow_sudo=True))
 async def kang(args):
     """For .kang command, kangs stickers or creates new ones."""
     user = await bot.get_me()
@@ -108,7 +108,7 @@ async def kang(args):
         packnick = (
             f"{telename} Vol.{pack}"
             if telename
-            else f"✘ @{user.username}'s 𝙻𝙸𝙾𝙽 𝚅𝙾𝙻.{pack} ✘"
+            else f"✘ @{user.username}'s kiku 𝚅𝙾𝙻.{pack} ✘"
         )
         cmd = "/newpack"
         file = io.BytesIO()
@@ -294,8 +294,8 @@ async def resize_photo(photo):
     return image
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="stkrinfo"))
-@Lion.on(sudo_cmd(pattern="stkrinfo", allow_sudo=True))
+@kiku.on(admin_cmd(outgoing=True, pattern="stkrinfo"))
+@kiku.on(sudo_cmd(pattern="stkrinfo", allow_sudo=True))
 # @register(outgoing=True, pattern="^.stkrinfo$")
 async def get_pack_info(event):
     if not event.is_reply:
