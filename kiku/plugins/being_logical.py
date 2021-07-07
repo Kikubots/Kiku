@@ -8,11 +8,11 @@ Quotes credits: Being logical Channel
 import asyncio
 import random
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern=r"belo", outgoing=True))
-@Lion.on(sudo_cmd(pattern=r"belo"))
+@kiku.on(admin_cmd(pattern=r"belo", outgoing=True))
+@kiku.on(sudo_cmd(pattern=r"belo"))
 async def _(event):
 
     if event.fwd_from:
