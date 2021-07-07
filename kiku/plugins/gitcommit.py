@@ -11,13 +11,13 @@ from datetime import datetime
 
 from github import Github
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 GIT_TEMP_DIR = "./userbot/temp/"
 
 
-@Lion.on(admin_cmd(pattern="commit", outgoing=True))
-@Lion.on(sudo_cmd(pattern="commit", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="commit", outgoing=True))
+@kiku.on(sudo_cmd(pattern="commit", allow_sudo=True))
 async def download(event):
     if event.fwd_from:
         return
