@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -18,16 +18,16 @@ from telegraph import Telegraph
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from Lion import CMD_HELP
-from Lion.LionConfig import Var
-from Lion.utils import admin_cmd, sudo_cmd
+from kiku import CMD_HELP
+from kiku.LionConfig import Var
+from kiku.utils import admin_cmd, sudo_cmd
 
 telegraph = Telegraph()
 mee = telegraph.create_account(short_name="Lion")
 
 
-@Lion.on(admin_cmd(pattern="purl ?(.*)"))
-@Lion.on(sudo_cmd(pattern="purl ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="purl ?(.*)"))
+@kiku.on(sudo_cmd(pattern="purl ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -54,8 +54,8 @@ async def _(event):
         )
 
 
-@Lion.on(admin_cmd(pattern="reader ?(.*)"))
-@Lion.on(sudo_cmd(pattern="reader ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="reader ?(.*)"))
+@kiku.on(sudo_cmd(pattern="reader ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -85,8 +85,8 @@ async def _(event):
         )
 
 
-@Lion.on(admin_cmd(pattern="aud ?(.*)"))
-@Lion.on(sudo_cmd(pattern="aud ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="aud ?(.*)"))
+@kiku.on(sudo_cmd(pattern="aud ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -117,8 +117,8 @@ async def _(event):
         await event.client.send_file(event.chat_id, response.message.media)
 
 
-@Lion.on(admin_cmd(pattern="instadl ?(.*)"))
-@Lion.on(sudo_cmd(pattern="instadl ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="instadl ?(.*)"))
+@kiku.on(sudo_cmd(pattern="instadl ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -145,8 +145,8 @@ async def _(event):
         )
 
 
-@Lion.on(admin_cmd(pattern="stat$"))
-@Lion.on(sudo_cmd(pattern="stat$", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="stat$"))
+@kiku.on(sudo_cmd(pattern="stat$", allow_sudo=True))
 async def stats(event):
     if event.fwd_from:
         return
@@ -159,8 +159,8 @@ async def stats(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="xogame$"))
-@Lion.on(sudo_cmd(pattern="xogame$", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="xogame$"))
+@kiku.on(sudo_cmd(pattern="xogame$", allow_sudo=True))
 async def gamez(event):
     if event.fwd_from:
         return
@@ -173,8 +173,8 @@ async def gamez(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="wspr ?(.*)"))
-@Lion.on(sudo_cmd(pattern="wspr ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="wspr ?(.*)"))
+@kiku.on(sudo_cmd(pattern="wspr ?(.*)", allow_sudo=True))
 async def wspr(event):
     if event.fwd_from:
         return
@@ -187,8 +187,8 @@ async def wspr(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="crack ?(.*)"))
-@Lion.on(sudo_cmd(pattern="crack ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="crack ?(.*)"))
+@kiku.on(sudo_cmd(pattern="crack ?(.*)", allow_sudo=True))
 async def mod(event):
     if event.fwd_from:
         return
@@ -201,8 +201,8 @@ async def mod(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="checkspam ?(.*)"))
-@Lion.on(sudo_cmd(pattern="checkspam ?(.*), allow_sudo=True"))
+@kiku.on(admin_cmd(pattern="checkspam ?(.*)"))
+@kiku.on(sudo_cmd(pattern="checkspam ?(.*), allow_sudo=True"))
 async def _(event):
     bot = "@SpamBot"
     if event.fwd_from:
@@ -222,8 +222,8 @@ async def _(event):
                 await eor(event, "**Error:** `unblock` @spambot `and retry!")
 
 
-@Lion.on(admin_cmd(pattern="gitdl ?(.*)"))
-@Lion.on(sudo_cmd(pattern="gitdl ?(.*), allow_sudo=True"))
+@kiku.on(admin_cmd(pattern="gitdl ?(.*)"))
+@kiku.on(sudo_cmd(pattern="gitdl ?(.*), allow_sudo=True"))
 async def _(event):
     if event.fwd_from:
         return
@@ -251,8 +251,8 @@ async def _(event):
         await x.edit("Downloaded by [Lion](t.me/LionSupport), via @gitdownloadbot")
 
 
-@Lion.on(admin_cmd(pattern="imusic ?(.*)"))
-@Lion.on(sudo_cmd(pattern="imusic ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="imusic ?(.*)"))
+@kiku.on(sudo_cmd(pattern="imusic ?(.*)", allow_sudo=True))
 async def tel(event):
     if event.fwd_from:
         return
@@ -265,8 +265,8 @@ async def tel(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="font ?(.*)"))
-@Lion.on(sudo_cmd(pattern="font ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="font ?(.*)"))
+@kiku.on(sudo_cmd(pattern="font ?(.*)", allow_sudo=True))
 async def _(event):
     bot = "@fontsgenbot"
     if event.fwd_from:
