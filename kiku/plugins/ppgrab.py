@@ -15,8 +15,8 @@ if 1 == 1:
     name = "Profile Photos"
     client = borg
 
-    @Lion.on(admin_cmd(pattern="poto(.*)"))
-    @Lion.on(sudo_cmd(pattern="poto(.*)", allow_sudo=True))
+    @kiku.on(admin_cmd(pattern="poto(.*)"))
+    @kiku.on(sudo_cmd(pattern="poto(.*)", allow_sudo=True))
     async def potocmd(event):
         """Gets the profile photos of replied users, channels or chats"""
         id = "".join(event.raw_text.split(maxsplit=2)[1:])
