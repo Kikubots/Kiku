@@ -54,12 +54,12 @@ async def lg1(Lionevent):
     draw.text(
         (w_, h_), text, font=font, fill="white", stroke_width=strik, stroke_fill="black"
     )
-    file_name = "LionBot.png"
+    file_name = "kikuBot.png"
     img.save(file_name, "png")
     await bot.send_file(
         Lionevent.chat_id,
         file_name,
-        caption=f"**Made By**: [LionUb](t.me/lionxupdates)",
+        caption=f"**Made By**: [Teamkiku](t.me/Teamkiku)",
     )
     await event.delete()
     try:
