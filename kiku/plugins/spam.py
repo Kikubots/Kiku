@@ -3,7 +3,7 @@ import os
 
 from telegraph import Telegraph, upload_file
 
-from Lion.LionConfig import Config
+from kiku.kikuConfig import Config
 
 from .. import CMD_HELP
 
@@ -21,8 +21,8 @@ auth_url = r["auth_url"]
 # ported by @its_xditya
 
 
-@Lion.on(admin_cmd(pattern="tspam"))
-@Lion.on(sudo_cmd(pattern="tspam", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="tspam"))
+@kiku.on(sudo_cmd(pattern="tspam", allow_sudo=True))
 async def tmeme(e):
     tspam = str(e.text[7:])
     message = tspam.replace(" ", "")
@@ -31,8 +31,8 @@ async def tmeme(e):
     await e.delete()
 
 
-@Lion.on(admin_cmd(pattern="spam"))
-@Lion.on(sudo_cmd(pattern="spam", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="spam"))
+@kiku.on(sudo_cmd(pattern="spam", allow_sudo=True))
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
@@ -46,8 +46,8 @@ async def spammer(e):
             )
 
 
-@Lion.on(admin_cmd(pattern="bigspam"))
-@Lion.on(sudo_cmd(pattern="bigspam", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="bigspam"))
+@kiku.on(sudo_cmd(pattern="bigspam", allow_sudo=True))
 async def bigspam(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
@@ -62,8 +62,8 @@ async def bigspam(e):
             )
 
 
-@Lion.on(admin_cmd(pattern="picspam"))
-@Lion.on(sudo_cmd(pattern="picspam", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="picspam"))
+@kiku.on(sudo_cmd(pattern="picspam", allow_sudo=True))
 async def tiny_pic_spam(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
@@ -93,8 +93,8 @@ async def tiny_pic_spam(e):
             )
 
 
-@Lion.on(admin_cmd("delayspam (.*)"))
-@Lion.on(sudo_cmd(pattern="delayspam (.*)", allow_sudo=True))
+@kiku.on(admin_cmd("delayspam (.*)"))
+@kiku.on(sudo_cmd(pattern="delayspam (.*)", allow_sudo=True))
 async def spammer(event):
     if event.fwd_from:
         return
@@ -203,8 +203,8 @@ async def spam_function(event, sandy, cat, sleeptimem, sleeptimet, DelaySpam=Fal
                 )
 
 
-@Lion.on(admin_cmd(pattern="spspam$"))
-@Lion.on(sudo_cmd(pattern="spspam$", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="spspam$"))
+@kiku.on(sudo_cmd(pattern="spspam$", allow_sudo=True))
 async def stickerpack_spam(event):
     if event.fwd_from:
         return
@@ -267,8 +267,8 @@ async def stickerpack_spam(event):
         await event.client.send_file(BOTLOG_CHATID, reqd_sticker_set.documents[0])
 
 
-@Lion.on(admin_cmd("cspam (.*)"))
-@Lion.on(sudo_cmd(pattern="cspam (.*)", allow_sudo=True))
+@kiku.on(admin_cmd("cspam (.*)"))
+@kiku.on(sudo_cmd(pattern="cspam (.*)", allow_sudo=True))
 async def tmeme(event):
     cspam = str("".join(event.text.split(maxsplit=1)[1:]))
     message = cspam.replace(" ", "")
@@ -289,8 +289,8 @@ async def tmeme(event):
             )
 
 
-@Lion.on(admin_cmd("wspam (.*)"))
-@Lion.on(sudo_cmd(pattern="wspam (.*)", allow_sudo=True))
+@kiku.on(admin_cmd("wspam (.*)"))
+@kiku.on(sudo_cmd(pattern="wspam (.*)", allow_sudo=True))
 async def tmeme(event):
     wspam = str("".join(event.text.split(maxsplit=1)[1:]))
     message = wspam.split()
@@ -312,8 +312,8 @@ async def tmeme(event):
             )
 
 
-@Lion.on(admin_cmd(pattern="raid (.*)"))
-@Lion.on(sudo_cmd(pattern="raid (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="raid (.*)"))
+@kiku.on(sudo_cmd(pattern="raid (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
