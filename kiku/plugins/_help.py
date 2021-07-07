@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -16,8 +16,8 @@
 
 import os
 
-from Lion import ALIVE_NAME, CMD_HELP, CMD_HNDLR, CMD_LIST
-from Lion.LionConfig import Config, Var
+from kiku import ALIVE_NAME, CMD_HELP, CMD_HNDLR, CMD_LIST
+from kiku.LionConfig import Config, Var
 
 HELP_PIC = Var.HELP_PIC if Var.HELP_PIC else "https://telegra.ph/file/28ed48fae7e23192af2cc.jpg"
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Lion User"
@@ -28,7 +28,7 @@ if CMD_HNDLR is None:
     CMD_HNDLR = "."
 
 
-@Lion.on(admin_cmd(pattern="help ?(.*)"))
+@kiku.on(admin_cmd(pattern="help ?(.*)"))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
@@ -62,18 +62,18 @@ async def cmd_list(event):
                 if input_str in CMD_HELP:
                     for i in CMD_HELP[input_str]:
                         string += i
-                    string += "\n\n**© @LionXsupport**"
+                    string += "\n\n**© @teamkiku**"
                     await event.edit(string)
                 else:
                     for i in CMD_LIST[input_str]:
                         string += "    " + i
                         string += "\n"
-                    string += "\n**© @LionXsupport**"
+                    string += "\n**© @teamkiku**"
                     await event.edit(string)
             else:
                 await event.edit(input_str + " 𝙸𝚂 𝙽𝙾𝚃 𝙰 𝚅𝙰𝙻𝙸𝙳 𝙿𝙻𝚄𝙶𝙸𝙽!!")
         else:
-            help_string = f"""`ℓισи υв нєℓρ мєиυ ρяσνι∂є∂ ву` [тєαм ℓισи υв](t.me/TeamLionUB) fσя **{DEFAULTUSER}**\nɪғ ɪɴ ᴄᴀsᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴅᴏᴇsɴ'ᴛ ᴀᴘᴘᴇᴀʀ Tʜᴀɴ ᴜ ᴄᴀɴ ᴜsᴇ `.help plugin name`\n\n"""
+            help_string = f"""`ℓισи υв нєℓρ мєиυ ρяσνι∂є∂ ву` [kiku ℓισи υв](t.me/Teamkiku) fσя **{DEFAULTUSER}**\nɪғ ɪɴ ᴄᴀsᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ᴅᴏᴇsɴ'ᴛ ᴀᴘᴘᴇᴀʀ Tʜᴀɴ ᴜ ᴄᴀɴ ᴜsᴇ `.help plugin name`\n\n"""
             try:
                 results = await bot.inline_query(  # pylint:disable=E0602
                     tgbotusername, help_string
@@ -84,5 +84,5 @@ async def cmd_list(event):
                 await event.delete()
             except BaseException:
                 await event.edit(
-                    f"𝚃𝙷𝙸𝚂 𝙱𝙾𝚃 𝙸𝙽𝙻𝙸𝙽𝙴 𝙸𝚂 𝙳𝙸𝚂𝙰𝙱𝙻𝙴. 𝙿𝙻𝙴𝙰𝚂𝙴 𝚄𝙽𝙰𝙱𝙻𝙴 𝚃𝙾 𝚄𝚂𝙴 `{CMD_HNDLR}help`.\n𝙵𝙾𝚁 𝙰𝙽𝚃 𝙷𝙴𝙻𝙿 [here](t.me/LionHelpChat)"
+                    f"𝚃𝙷𝙸𝚂 𝙱𝙾𝚃 𝙸𝙽𝙻𝙸𝙽𝙴 𝙸𝚂 𝙳𝙸𝚂𝙰𝙱𝙻𝙴. 𝙿𝙻𝙴𝙰𝚂𝙴 𝚄𝙽𝙰𝙱𝙻𝙴 𝚃𝙾 𝚄𝚂𝙴 `{CMD_HNDLR}help`.\n𝙵𝙾𝚁 𝙰𝙽𝚃 𝙷𝙴𝙻𝙿 [here](t.me/Teamkiku)"
                 )
