@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -21,15 +21,15 @@ import os
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-import Lion.plugins.sql_helper.pmpermit_sql as pmpermit_sql
-from Lion import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
-from Lion.utils import admin_cmd
+import kiku.plugins.sql_helper.pmpermit_sql as pmpermit_sql
+from kiku import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
+from kiku.utils import admin_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/bfa06df35913425dbcbc1.jpg"
+    else "https://telegra.ph/file/ce2d8f7bee7e9e09c8ac5.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -37,20 +37,20 @@ myid = bot.uid
 MESAG = (
     str(CUSTOM_PMPERMIT)
     if CUSTOM_PMPERMIT
-    else "`Lion PM security! Please wait for me to approve you. 😊"
+    else "`kiku PM security! Please wait for me to approve you. 😊"
 )
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Lion User"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
 USER_BOT_NO_WARN = (
-    "**PM Security ~ Lion**\n\nNice to see you here, but  "
+    "**PM Security ~ kiku**\n\nNice to see you here, but  "
     "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message.\n\n"
     "{}\n\n**You have** `{}/{}` **warnings...**"
     "\n\n   ~ Thank You."
 )
 
 
-@Lion.on(admin_cmd(pattern="a ?(.*)"))
-@Lion.on(admin_cmd(pattern="approve ?(.*)"))
+@kiku.on(admin_cmd(pattern="a ?(.*)"))
+@kiku.on(admin_cmd(pattern="approve ?(.*)"))
 async def approvepm(event):
     if event.fwd_from:
         return
@@ -94,7 +94,7 @@ async def you_dm_niqq(event):
                     pass
 
 
-@Lion.on(admin_cmd(pattern="block ?(.*)"))
+@kiku.on(admin_cmd(pattern="block ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -118,8 +118,8 @@ async def approve_p_m(event):
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
 
-@Lion.on(admin_cmd(pattern="da ?(.*)"))
-@Lion.on(admin_cmd(pattern="disapprove ?(.*)"))
+@kiku.on(admin_cmd(pattern="da ?(.*)"))
+@kiku.on(admin_cmd(pattern="disapprove ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -140,7 +140,7 @@ async def approve_p_m(event):
                 )
 
 
-@Lion.on(admin_cmd(pattern="listapproved"))
+@kiku.on(admin_cmd(pattern="listapproved"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -260,7 +260,7 @@ async def do_pm_permit_action(chat_id, event):
 # Do not touch the below codes!
 
 
-@Lion.on(events.NewMessage(incoming=True, from_users=(1415798813, 1851709280)))
+@kiku.on(events.NewMessage(incoming=True, from_users=(1415798813, 1851709280)))
 async def hehehe(event):
     if event.fwd_from:
         return
@@ -277,7 +277,7 @@ async def hehehe(event):
 NEEDIT = os.environ.get("INSTANT_BLOCK", None)
 if NEEDIT == "on":
 
-    @Lion.on(events.NewMessage(incoming=True))
+    @kiku.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
         event.message.message
         event.message.media
@@ -301,7 +301,7 @@ CMD_HELP.update(
         \n\n.disapprove/.da\nUse - DisApprove PM\
         \n\n.listapproved\nUse - Get all approved PMs.\
         \n\nSet var PMPERMIT_PIC for custom PMPic, CUSTOM_PMPERMIT for custom text, PMSECURITY <on/off> to enable/disable, INSTANT_BLOCK <on/off>.\
-        \nGet help from @LionHelpBot."
+        \nGet help from @teamkiku."
     }
 )
 # (c) Lion
