@@ -7,9 +7,9 @@ import os
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-# from Lion.utils import admin_cmd
-from Lion import CMD_HELP, bot
-from Lion.utils import admin_cmd
+# from kiku.utils import admin_cmd
+from kiku import CMD_HELP, bot
+from kiku.utils import admin_cmd
 
 try:
     pass
@@ -23,8 +23,8 @@ def bruh(name):
     os.system("instantmusic -q -s " + name)
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="spd(?: |$)(.*)"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern="spd(?: |$)(.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern="spd(?: |$)(.*)"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern="spd(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -52,8 +52,8 @@ async def _(event):
         )
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="netease(?: |$)(.*)"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern="netease(?: |$)(.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern="netease(?: |$)(.*)"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern="netease(?: |$)(.*)"))
 async def WooMai(netase):
     if netase.fwd_from:
         return
@@ -85,8 +85,8 @@ async def WooMai(netase):
     await netase.delete()
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="dzd(?: |$)(.*)"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern="dzd(?: |$)(.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern="dzd(?: |$)(.*)"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern="dzd(?: |$)(.*)"))
 async def DeezLoader(Deezlod):
     if Deezlod.fwd_from:
         return
