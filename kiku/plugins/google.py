@@ -7,7 +7,7 @@ from re import findall
 
 from search_engine_parser import GoogleSearch
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
 def progress(current, total):
@@ -18,7 +18,7 @@ def progress(current, total):
     )
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="go (.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern="go (.*)"))
 async def gsearch(q_event):
     """ For .google command, do a Google search. """
     match = q_event.pattern_match.group(1)
