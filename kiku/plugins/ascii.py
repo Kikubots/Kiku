@@ -1,12 +1,12 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="ascii ?(.*)"))
-@Lion.on(sudo_cmd(pattern="ascii ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="ascii ?(.*)"))
+@kiku.on(sudo_cmd(pattern="ascii ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -43,7 +43,7 @@ async def _(event):
             await borg.send_file(event.chat_id, response.message.media)
 
 
-# For Lion
+# For kiku
 CMD_HELP.update(
     {
         "ascii": "`.ascii` reply to any image file:\
