@@ -5,12 +5,12 @@ from datetime import datetime
 
 import speedtest
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="speedtest ?(.*)"))
-@Lion.on(sudo_cmd(pattern="speedtest ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="speedtest ?(.*)"))
+@kiku.on(sudo_cmd(pattern="speedtest ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
