@@ -7,11 +7,11 @@
 import asyncio
 import random
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="gotm", outgoing=True))
-@Lion.on(sudo_cmd(pattern="gotm", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="gotm", outgoing=True))
+@kiku.on(sudo_cmd(pattern="gotm", allow_sudo=True))
 async def _(event):
 
     if event.fwd_from:
