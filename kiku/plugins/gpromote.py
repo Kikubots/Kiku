@@ -2,8 +2,8 @@
 from telethon.tl.functions.channels import EditAdminRequest
 from telethon.tl.types import ChatAdminRights, MessageEntityMentionName
 
-from Lion import bot as borg
-from Lion.utils import admin_cmd
+from kiku import bot as borg
+from kiku.utils import admin_cmd
 
 marculs = 9
 
