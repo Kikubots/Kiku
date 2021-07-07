@@ -2,7 +2,7 @@
 Syntax: .github USERNAME"""
 import requests
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
 @borg.on(admin_cmd(pattern="github (.*)"))
