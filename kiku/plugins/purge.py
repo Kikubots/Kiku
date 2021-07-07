@@ -4,15 +4,15 @@ from asyncio import sleep
 
 from telethon.errors import rpcbaseerrors
 
-from Lion import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from Lion.LionConfig import Var
-from Lion.utils import admin_cmd, errors_handler
+from kiku import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from kiku.kikuConfig import Var
+from kiku.utils import admin_cmd, errors_handler
 
 BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="purge"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern="purge"))
+@kiku.on(admin_cmd(outgoing=True, pattern="purge"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern="purge"))
 @errors_handler
 async def fastpurger(purg):
     """For .purge command, purge all messages starting from the reply."""
@@ -43,7 +43,7 @@ async def fastpurger(purg):
     await done.delete()
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="purgeme"))
+@kiku.on(admin_cmd(outgoing=True, pattern="purgeme"))
 @errors_handler
 async def purgeme(delme):
     """For .purgeme, delete x count of your latest message."""
@@ -70,7 +70,7 @@ async def purgeme(delme):
     await smsg.delete()
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="del"))
+@kiku.on(admin_cmd(outgoing=True, pattern="del"))
 @errors_handler
 async def delete_it(delme):
     """For .del command, delete the replied message."""
@@ -90,7 +90,7 @@ async def delete_it(delme):
                 )
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="edit"))
+@kiku.on(admin_cmd(outgoing=True, pattern="edit"))
 @errors_handler
 async def editer(edit):
     """For .editme command, edit your last message."""
@@ -111,7 +111,7 @@ async def editer(edit):
         )
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="sd"))
+@kiku.on(admin_cmd(outgoing=True, pattern="sd"))
 @errors_handler
 async def selfdestruct(destroy):
     """For .sd command, make seflf-destructable messages."""
