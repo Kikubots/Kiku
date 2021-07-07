@@ -7,12 +7,12 @@ Available Commands:
 .gban REASON
 .ungban"""
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="botgban ?(.*)"))
-@Lion.on(sudo_cmd(pattern="botgban ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="botgban ?(.*)"))
+@kiku.on(sudo_cmd(pattern="botgban ?(.*)", allow_sudo=True))
 async def _(event):
     if Config.G_BAN_LOGGER_GROUP is None:
         await eor(
@@ -36,8 +36,8 @@ async def _(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="botungban ?(.*)"))
-@Lion.on(sudo_cmd(pattern="botungban ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="botungban ?(.*)"))
+@kiku.on(sudo_cmd(pattern="botungban ?(.*)", allow_sudo=True))
 async def _(event):
     if Config.G_BAN_LOGGER_GROUP is None:
         await eor(
