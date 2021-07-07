@@ -3,11 +3,11 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from Lion.utils import admin_cmd, sudo_cmd
 
-# (c)2020 Lion
+# (c)2020 kiku
 
 
-@Lion.on(admin_cmd(pattern="stickerize(?: |)(.*)"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern="stickerize(?: |$)(.*)"))
+@kiku.on(admin_cmd(pattern="stickerize(?: |)(.*)"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern="stickerize(?: |$)(.*)"))
 async def _(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
