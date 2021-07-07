@@ -7,8 +7,8 @@ from Lion import CMD_HELP
 from Lion.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern=r"shout", outgoing=True))
-@Lion.on(sudo_cmd(pattern=r"shout", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=r"shout", outgoing=True))
+@kiku.on(sudo_cmd(pattern=r"shout", allow_sudo=True))
 async def shout(args):
     if args.fwd_from:
         return
