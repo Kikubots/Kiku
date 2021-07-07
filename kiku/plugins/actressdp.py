@@ -13,7 +13,7 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 COLLECTION_STRING = [
     "indian-actress-wallpapers",
@@ -56,7 +56,7 @@ async def animepp():
 async def main(event):
 
     await event.edit(
-        "**Starting Actress Profile Pic...\n\nDone !!! Check Your DP in 5 seconds. \n By [Lion](https://github.com/xditya/Lion)**"
+        "**Starting Actress Profile Pic...\n\nDone !!! Check Your DP in 5 seconds. \n By [kiku](https://github.com/Teamkiku/kiku)**"
     )
 
     while True:
