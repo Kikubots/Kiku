@@ -20,14 +20,14 @@ from telethon import custom, events
 from telethon.tl.types import Channel
 from telethon.utils import get_display_name
 
-from Lion.LionConfig import Config
+from kiku.LionConfig import Config
 
 if Config.TAG_LOG:
     NEEDTOLOG = int(Config.TAG_LOG)
 
 if Config.TAG_LOG:
 
-    @Lion.on(
+    @kiku.on(
         events.NewMessage(
             incoming=True,
             blacklist_chats=Config.UB_BLACK_LIST_CHAT,
