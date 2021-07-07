@@ -7,8 +7,8 @@ from telethon.tl import functions
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
 
-from Lion import *
-from Lion.utils import admin_cmd
+from kiku import *
+from kiku.utils import admin_cmd
 
 
 async def get_chatinfo(event):
@@ -67,7 +67,7 @@ def user_full_name(user):
     return full_name
 
 
-@Lion.on(admin_cmd(pattern=r"allinvite ?(.*)"))
+@kiku.on(admin_cmd(pattern=r"allinvite ?(.*)"))
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
