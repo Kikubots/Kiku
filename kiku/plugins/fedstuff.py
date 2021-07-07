@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -23,8 +23,8 @@ from Lion import CMD_HELP
 bot = "@MissRose_bot"
 
 
-@Lion.on(admin_cmd(pattern="fstat ?(.*)"))
-@Lion.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="fstat ?(.*)"))
+@kiku.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -64,8 +64,8 @@ async def _(event):
                 await ok.edit("**Error**\n `Unblock` @MissRose_Bot `and try again!")
 
 
-@Lion.on(admin_cmd(pattern="fedinfo ?(.*)"))
-@Lion.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="fedinfo ?(.*)"))
+@kiku.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
