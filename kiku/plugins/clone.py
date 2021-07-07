@@ -21,7 +21,7 @@ else:
     BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
 
 
-@Lion.on(admin_cmd(pattern="clone ?(.*)"))
+@kiku.on(admin_cmd(pattern="clone ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -71,7 +71,7 @@ async def _(event):
         )
 
 
-@Lion.on(admin_cmd(pattern="revert$"))
+@kiku.on(admin_cmd(pattern="revert$"))
 async def _(event):
     if event.fwd_from:
         return
