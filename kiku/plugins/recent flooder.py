@@ -1,10 +1,10 @@
 import asyncio
 
-from Lion import bot as Lion
-from Lion.utils import admin_cmd
+from kiku import bot as kiku
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd("chaos2"))
+@kiku.on(admin_cmd("chaos2"))
 async def _(event):
     if event.fwd_from:
         return
