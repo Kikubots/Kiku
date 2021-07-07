@@ -1,12 +1,12 @@
 import asyncio
 
-from Lion import CMD_HELP
-from Lion.plugins.sql_helper.mute_sql import is_muted, mute, unmute
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.plugins.sql_helper.mute_sql import is_muted, mute, unmute
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern=r"mute ?(\d+)?"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern=r"mute ?(\d+)?"))
+@kiku.on(admin_cmd(outgoing=True, pattern=r"mute ?(\d+)?"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern=r"mute ?(\d+)?"))
 async def startmute(event):
     private = False
     if event.fwd_from:
@@ -52,8 +52,8 @@ async def startmute(event):
         await eor(event, "Successfully muted that person")
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern=r"unmute ?(\d+)?"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern=r"unmute ?(\d+)?"))
+@kiku.on(admin_cmd(outgoing=True, pattern=r"unmute ?(\d+)?"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern=r"unmute ?(\d+)?"))
 async def endmute(event):
     private = False
     if event.fwd_from:
@@ -85,7 +85,7 @@ async def endmute(event):
         await eor(event, "Successfully unmuted that person")
 
 
-@Lion.on(admin_cmd(incoming=True))
+@kiku.on(admin_cmd(incoming=True))
 async def watcher(event):
     if is_muted(event.sender_id, event.chat_id):
         await event.delete()
