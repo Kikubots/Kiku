@@ -5,8 +5,8 @@ import asyncio
 from telethon.tl.types import InputMediaUploadedPhoto
 from uniborg.util import admin_cmd
 
-from Lion import CMD_HELP
-from Lion.plugins.sql_helper.ghdb_sql import (
+from kiku import CMD_HELP
+from kiku.plugins.sql_helper.ghdb_sql import (
     add_channel,
     get_all_channels,
     in_channels,
@@ -18,8 +18,8 @@ logs_id = Var.PRIVATE_GROUP_ID
 # Keep all credits pls, made with great effort by @HeisenbergTheDanger
 
 
-@Lion.on(admin_cmd(pattern="forward ?(.*)"))
-@Lion.on(sudo_cmd(pattern="forward ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="forward ?(.*)"))
+@kiku.on(sudo_cmd(pattern="forward ?(.*)", allow_sudo=True))
 async def forw(event):
     if event.fwd_from:
         return
@@ -68,8 +68,8 @@ async def forw(event):
             await mssg.edit("Set up log channel for checking errors.")
 
 
-@Lion.on(admin_cmd(pattern="broadcast ?(.*)"))
-@Lion.on(sudo_cmd(pattern="broadcast ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="broadcast ?(.*)"))
+@kiku.on(sudo_cmd(pattern="broadcast ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -186,7 +186,7 @@ async def _(event):
 # Written by @HeisenbergTheDanger
 
 
-@Lion.on(admin_cmd(pattern="add ?(.*)"))
+@kiku.on(admin_cmd(pattern="add ?(.*)"))
 async def add_ch(event):
     if event.fwd_from:
         return
@@ -227,7 +227,7 @@ async def add_ch(event):
         await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="rm ?(.*)"))
+@kiku.on(admin_cmd(pattern="rm ?(.*)"))
 async def remove_ch(event):
     if event.fwd_from:
         return
@@ -255,8 +255,8 @@ async def remove_ch(event):
         await event.delete()
 
 
-@Lion.on(admin_cmd(pattern="listchannels"))
-@Lion.on(sudo_cmd(pattern="listchannels", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="listchannels"))
+@kiku.on(sudo_cmd(pattern="listchannels", allow_sudo=True))
 async def list(event):
     if event.fwd_from:
         return
@@ -281,8 +281,8 @@ async def list(event):
         await eor(event, msg)
 
 
-@Lion.on(admin_cmd(pattern="search ?(.*)"))
-@Lion.on(sudo_cmd(pattern="search ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="search ?(.*)"))
+@kiku.on(sudo_cmd(pattern="search ?(.*)", allow_sudo=True))
 async def search(event):
     channel_id = event.pattern_match.group(1)
     try:
