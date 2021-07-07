@@ -1,6 +1,6 @@
 import random
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 RUNSREACTS = [
     "`Congratulations and BRAVO!`",
@@ -16,8 +16,8 @@ RUNSREACTS = [
 ]
 
 
-@Lion.on(admin_cmd(pattern="congo"))
-@Lion.on(sudo_cmd(pattern="congo", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="congo"))
+@kiku.on(sudo_cmd(pattern="congo", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
