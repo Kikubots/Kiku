@@ -6,10 +6,10 @@ import asyncio
 
 from uniborg.util import admin_cmd
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern=r"jio"))
+@kiku.on(admin_cmd(pattern=r"jio"))
 async def _(event):
 
     if event.fwd_from:
