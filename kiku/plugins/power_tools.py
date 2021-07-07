@@ -26,7 +26,7 @@ async def _(event):
     # await event.edit(f"Done! \n■■■■■■■■■■  ")
     # await asyncio.sleep(2)
     await event.edit(
-        f"__Lion is Restarting...__\nPlease give it **a minute or two** and then use `{CMD_HNDLR}alive`! "
+        f"__kiku is Restarting...__\nPlease give it **a minute or two** and then use `{CMD_HNDLR}alive`! "
     )
     await borg.disconnect()
     # https://archive.is/im3rt
@@ -35,7 +35,7 @@ async def _(event):
     quit()
 
 
-@Lion.on(admin_cmd(pattern="shutdown"))
+@kiku.on(admin_cmd(pattern="shutdown"))
 async def _(event):
     if event.fwd_from:
         return
