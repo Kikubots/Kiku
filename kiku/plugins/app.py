@@ -7,13 +7,13 @@ Fetch App Details from Playstore.
 import bs4
 import requests
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
-lion_version = "V2.0"
+kiku_version = "V2.0"
 
 
-@Lion.on(admin_cmd(pattern="app (.*)"))
-@Lion.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="app (.*)"))
+@kiku.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
 async def apk(event):
     app_name = event.pattern_match.group(1)
     event = await edit_or_reply(event, "Finding your app!")
