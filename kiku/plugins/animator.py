@@ -3,11 +3,11 @@
 # ,stupid,madafucking,avengers_leader,the copy paster
 import asyncio
 
-from Lion import bot as Lion
-from Lion.utils import admin_cmd
+from kiku import bot as Lion
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(pattern="animate (.*)"))
+@kiku.on(admin_cmd(pattern="animate (.*)"))
 async def _(event):
     name = event.pattern_match.group(1)
     if event.fwd_from:
