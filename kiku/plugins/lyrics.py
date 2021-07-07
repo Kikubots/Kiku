@@ -7,14 +7,14 @@ import os
 import lyricsgenius
 from tswift import Song
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="lyrics ?(.*)"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern="lyrics ?(.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern="lyrics ?(.*)"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern="lyrics ?(.*)"))
 async def _(event):
     await eor(event, "wi8..! I am searching your lyrics....`")
     reply_to_id = event.message.id
@@ -53,8 +53,8 @@ async def _(event):
         await eor(event, reply)
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="glyrics ?(.*)"))
-@Lion.on(sudo_cmd(outgoing=True, pattern="glyrics ?(.*)", allow_sudo=True))
+@kiku.on(admin_cmd(outgoing=True, pattern="glyrics ?(.*)"))
+@kiku.on(sudo_cmd(outgoing=True, pattern="glyrics ?(.*)", allow_sudo=True))
 async def lyrics(lyric):
     if lyric.pattern_match.group(1):
         query = lyric.pattern_match.group(1)
