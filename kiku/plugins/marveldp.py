@@ -16,8 +16,8 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 COLLECTION_STRING = [
     "avengers-logo-wallpaper",
@@ -76,7 +76,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@Lion.on(admin_cmd(pattern="marveldp ?(.*)"))
+@kiku.on(admin_cmd(pattern="marveldp ?(.*)"))
 async def main(event):
 
     await event.edit(
