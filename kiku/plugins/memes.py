@@ -10,9 +10,9 @@ from telethon import events
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
-from Lion import CMD_HELP
-from Lion.LionConfig import Var
-from Lion.utils import admin_cmd, register
+from kiku import CMD_HELP
+from kiku.kikuConfig import Var
+from Kiku.utils import admin_cmd, register
 
 # ================= CONSTANT =================
 RENDISTR = [
@@ -641,7 +641,7 @@ HIT = [
 # ===========================================
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern=r"(\w+)say (.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern=r"(\w+)say (.*)"))
 async def univsaye(cowmsg):
     """ For .cowsay module, userbot wrapper for cow which says things. """
     if not cowmsg.text[0].isalpha() and cowmsg.text[0] not in ("/", "#", "@", "!"):
@@ -658,7 +658,7 @@ async def univsaye(cowmsg):
         await cowmsg.edit(f"`{cheese.milk(text).replace('`', '´')}`")
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern=":/"))
+@kiku.on(admin_cmd(outgoing=True, pattern=":/"))
 async def kek(keks):
     if not keks.text[0].isalpha() and keks.text[0] not in ("/", "#", "@", "!"):
         """ Check yourself ;)"""
@@ -668,7 +668,7 @@ async def kek(keks):
             await keks.edit(":" + uio[i % 2])
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern=r"coinflip (.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern=r"coinflip (.*)"))
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         if event.fwd_from:
@@ -699,7 +699,7 @@ async def _(event):
             await event.edit("Gimme another coin, this one fake AF !!")
 
 
-@Lion.on(admin_cmd(pattern="slap(?: |$)(.*)", outgoing=True))
+@kiku.on(admin_cmd(pattern="slap(?: |$)(.*)", outgoing=True))
 async def who(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         """ slaps a user, or get slapped if not a reply. """
@@ -786,7 +786,7 @@ async def lol(lel):
             await lel.edit(okay)
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="decide"))
+@kiku.on(admin_cmd(outgoing=True, pattern="decide"))
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         if event.fwd_from:
@@ -813,21 +813,21 @@ async def fun(e):
             await e.edit(t)
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="cry"))
+@kiku.on(admin_cmd(outgoing=True, pattern="cry"))
 async def cry(e):
     """ y u du dis, i cry everytime !! """
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(random.choice(CRI))
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="insult"))
+@kiku.on(admin_cmd(outgoing=True, pattern="insult"))
 async def insult(e):
     """ I make you cry !! """
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(random.choice(INSULT_STRINGS))
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="cp(?: |$)(.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern="cp(?: |$)(.*)"))
 async def copypasta(cp_e):
     """ Copypasta the famous meme """
     if not cp_e.text[0].isalpha() and cp_e.text[0] not in ("/", "#", "@", "!"):
@@ -862,7 +862,7 @@ async def copypasta(cp_e):
         await cp_e.edit(reply_text)
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="vapor(?: |$)(.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern="vapor(?: |$)(.*)"))
 async def vapor(vpr):
     """ Vaporize everything! """
     if not vpr.text[0].isalpha() and vpr.text[0] not in ("/", "#", "@", "!"):
@@ -888,7 +888,7 @@ async def vapor(vpr):
         await vpr.edit("".join(reply_text))
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="repo"))
+@kiku.on(admin_cmd(outgoing=True, pattern="repo"))
 async def repo(event):
     if event.fwd_from:
         return
@@ -900,7 +900,7 @@ async def repo(event):
     await event.delete()
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="str(?: |$)(.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern="str(?: |$)(.*)"))
 async def stretch(stret):
     """ Stretch it."""
     if not stret.text[0].isalpha() and stret.text[0] not in ("/", "#", "@", "!"):
@@ -922,7 +922,7 @@ async def stretch(stret):
         await stret.edit(reply_text)
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="zal(?: |$)(.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern="zal(?: |$)(.*)"))
 async def zal(zgfy):
     """ Invoke the feeling of chaos. """
     if not zgfy.text[0].isalpha() and zgfy.text[0] not in ("/", "#", "@", "!"):
@@ -959,21 +959,21 @@ async def zal(zgfy):
         await zgfy.edit("".join(reply_text))
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="hi"))
+@kiku.on(admin_cmd(outgoing=True, pattern="hi"))
 async def hoi(hello):
     """ Greet everyone! """
     if not hello.text[0].isalpha() and hello.text[0] not in ("/", "#", "@", "!"):
         await hello.edit(random.choice(HELLOSTR))
 
 
-@Lion.on(admin_cmd(pattern=r"hi2"))
+@kiku.on(admin_cmd(pattern=r"hi2"))
 async def hi(event):
     if event.fwd_from:
         return
     await event.edit("🌺✨✨🌺✨🌺🌺🌺\n🌺✨✨🌺✨✨🌺✨\n🌺🌺🌺🌺✨✨🌺✨\n🌺✨✨🌺✨✨🌺✨\n🌺✨✨🌺✨🌺🌺🌺\n☁☁☁☁☁☁☁☁")
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="kill"))
+@kiku.on(admin_cmd(outgoing=True, pattern="kill"))
 async def killing(killed):
     """ Dont Kill Too much -_-"""
     if not killed.text[0].isalpha() and killed.text[0] not in ("/", "#", "@", "!"):
@@ -1384,7 +1384,7 @@ async def typewriter(typew):
             await asyncio.sleep(sleep_time)
 
 
-@Lion.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+@kiku.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -1419,7 +1419,7 @@ async def _(event):
             await event.edit(animation_chars[i % 10])
 
 
-@Lion.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+@kiku.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -1466,7 +1466,7 @@ Available Commands:
 .emoji -_-"""
 
 
-@Lion.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+@kiku.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
