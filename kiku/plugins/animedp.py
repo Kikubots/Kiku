@@ -11,7 +11,7 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from Lion import CMD_HELP
+from kiku import CMD_HELP
 
 COLLECTION_STRING = [
     "cute-anime-wallpapers-hd",
@@ -50,7 +50,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@Lion.on(admin_cmd(pattern="animedp ?(.*)"))
+@kiku.on(admin_cmd(pattern="animedp ?(.*)"))
 async def main(event):
 
     await event.edit(
