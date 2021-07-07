@@ -1,15 +1,15 @@
 """
-For Lion, credits to @pureindialover
+For kiku, credits to @pureindialover
 """
 # Re-written by @its_xditya
 
 from telethon.tl import functions
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="create (b|g|c)(?: |$)(.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern="create (b|g|c)(?: |$)(.*)"))
 async def telegraphs(grop):
 
     """For .create command, Creating New Group & Channel"""
