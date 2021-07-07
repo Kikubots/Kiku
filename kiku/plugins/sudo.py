@@ -1,5 +1,5 @@
-#    Lion - UserBot
-#    Copyright (C) 2020 Lion
+#    kiku - UserBot
+#    Copyright (C) 2020 kiku
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -24,17 +24,17 @@ heroku_api = "https://api.heroku.com"
 sudousers = os.environ.get("SUDO_USERS", None)
 
 
-@Lion.on(admin_cmd(pattern="sudo"))
+@kiku.on(admin_cmd(pattern="sudo"))
 async def sudo(event):
     sudo = "True" if Config.SUDO_USERS else "False"
     users = os.environ.get("SUDO_USERS", None)
     if sudo == "True":
-        await eor(event, f"**Lion**\nSudo - `Enabled`\nSudo user(s) - `{users}`")
+        await eor(event, f"**kiku**\nSudo - `Enabled`\nSudo user(s) - `{users}`")
     else:
-        await eor(event, f"**Lion**\nSudo - `Disabled`")
+        await eor(event, f"**kiku**\nSudo - `Disabled`")
 
 
-@Lion.on(admin_cmd(pattern="prefix"))
+@kiku.on(admin_cmd(pattern="prefix"))
 async def handler(event):
     hndlr = Config.CMD_HNDLR
     if hndlr == r"\.":
@@ -46,7 +46,7 @@ async def handler(event):
     await eor(event, f"Command Handler - {x}\nSudo Handler - {sudohndlr}")
 
 
-@Lion.on(admin_cmd(pattern="addsudo(?: |$)"))
+@kiku.on(admin_cmd(pattern="addsudo(?: |$)"))
 async def tb(event):
     ok = await eor(event, "α∂∂ιηg υsεя αs sυ∂σ υsεя...")
     Lion = "SUDO_USERS"
