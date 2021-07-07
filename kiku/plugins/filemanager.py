@@ -10,14 +10,14 @@ import os.path
 import time
 from os.path import exists, isdir
 
-from Lion import CMD_HELP
-from Lion.utils import admin_cmd, humanbytes
+from kiku import CMD_HELP
+from kiku.utils import admin_cmd, humanbytes
 
 MAX_MESSAGE_SIZE_LIMIT = 4095
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern=r"ls ?(.*)"))
-@Lion.on(sudo_cmd(allow_sudo=True, pattern=r"ls ?(.*)"))
+@kiku.on(admin_cmd(outgoing=True, pattern=r"ls ?(.*)"))
+@kiku.on(sudo_cmd(allow_sudo=True, pattern=r"ls ?(.*)"))
 async def lst(event):
     if event.fwd_from:
         return
