@@ -5,8 +5,8 @@
 from Lion import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern=r"mention (.*)"))
-@Lion.on(sudo_cmd(pattern=r"mention (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern=r"mention (.*)"))
+@kiku.on(sudo_cmd(pattern=r"mention (.*)", allow_sudo=True))
 async def _(event):
     x = await eor(event, "...")
     if event.fwd_from:
