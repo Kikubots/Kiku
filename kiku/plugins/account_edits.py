@@ -1,4 +1,4 @@
-# Ported from other Telegram UserBots for Lion//Made for Lion
+# Ported from other Telegram UserBots for kiku//Made for kiku
 # Kangers, don't remove this line
 # @its_xditya
 
@@ -13,7 +13,7 @@ from telethon.tl.types import InputPhoto
 from Lion import CMD_HELP
 
 
-@Lion.on(admin_cmd(pattern="pbio (.*)"))  # pylint:disable=E0602
+@kiku.on(admin_cmd(pattern="pbio (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -27,7 +27,7 @@ async def _(event):
         await event.edit(str(e))
 
 
-@Lion.on(admin_cmd(pattern="pname ((.|\n)*)"))  # pylint:disable=E0602,W0703
+@kiku.on(admin_cmd(pattern="pname ((.|\n)*)"))  # pylint:disable=E0602,W0703
 async def _(event):
     if event.fwd_from:
         return
@@ -47,7 +47,7 @@ async def _(event):
         await event.edit(str(e))
 
 
-@Lion.on(admin_cmd(pattern="ppic"))  # pylint:disable=E0602
+@kiku.on(admin_cmd(pattern="ppic"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -82,7 +82,7 @@ async def _(event):
         logger.warn(str(e))  # pylint:disable=E0602
 
 
-@Lion.on(admin_cmd(pattern="delpfp ?(.*)"))
+@kiku.on(admin_cmd(pattern="delpfp ?(.*)"))
 async def remove_profilepic(delpfp):
     """For .delpfp command, delete your current profile picture in Telegram."""
     group = delpfp.text[8:]
