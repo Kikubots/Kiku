@@ -9,11 +9,11 @@ from shutil import which
 from Lion import ALIVE_NAME, CMD_HELP, lionver
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Lion"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "kiku"
 # ============================================
 
 
-@Lion.on(admin_cmd(pattern="sysd"))
+@kiku.on(admin_cmd(pattern="sysd"))
 async def sysdetails(sysd):
     """For .sysd command, get system info using neofetch."""
     if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
@@ -33,7 +33,7 @@ async def sysdetails(sysd):
             await sysd.edit("`Install neofetch first !!`")
 
 
-@Lion.on(admin_cmd(pattern="version"))
+@kiku.on(admin_cmd(pattern="version"))
 async def bot_ver(event):
     """For .botver command, get the bot version."""
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
@@ -61,7 +61,7 @@ async def bot_ver(event):
             revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
             await event.edit(
-                "`Lion Version: " f"{verout}" "` \n" "`Revision: " f"{revout}" "`"
+                "`kiku Version: " f"{verout}" "` \n" "`Revision: " f"{revout}" "`"
             )
         else:
             await event.edit(
@@ -69,7 +69,7 @@ async def bot_ver(event):
             )
 
 
-@Lion.on(admin_cmd(pattern="pip(?: |$)(.*)"))
+@kiku.on(admin_cmd(pattern="pip(?: |$)(.*)"))
 async def pipcheck(pip):
     """For .pip command, do a pip search."""
     if not pip.text[0].isalpha() and pip.text[0] not in ("/", "#", "@", "!"):
