@@ -4,8 +4,8 @@
 import asyncio
 import random
 
-from Lion import bot as Lion
-from Lion.utils import admin_cmd
+from kiku import bot as Lion
+from kiku.utils import admin_cmd
 
 img1 = "https://telegra.ph/file/2479b98d08eed6308dfba.mp4"
 img2 = "https://telegra.ph/file/f81f5ecbcb5ad7c07c093.mp4"
@@ -50,7 +50,7 @@ img39 = "https://telegra.ph/file/f7b4f5813f063c5f8b3ed.mp4"
 img40 = "https://telegra.ph/file/04cdec4e301a311b21584.mp4"
 
 
-@Lion.on(admin_cmd(outgoing=True, pattern="baby"))
+@kiku.on(admin_cmd(outgoing=True, pattern="baby"))
 async def _(event):
 
     if event.fwd_from:
