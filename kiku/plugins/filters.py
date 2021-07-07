@@ -19,7 +19,7 @@ from Lion.plugins.sql_helper.filter_sql import (
     remove_all_filters,
     remove_filter,
 )
-from Lion.utils import admin_cmd
+from kiku.utils import admin_cmd
 
 DELETE_TIMEOUT = 0
 TYPE_TEXT = 0
@@ -70,8 +70,8 @@ async def on_snip(event):
                 last_triggered_filters[event.chat_id].remove(name)
 
 
-@Lion.on(admin_cmd(pattern="savefilter (.*)"))
-@Lion.on(sudo_cmd(pattern="savefilter (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="savefilter (.*)"))
+@kiku.on(sudo_cmd(pattern="savefilter (.*)", allow_sudo=True))
 async def on_snip_save(event):
     name = event.pattern_match.group(1)
     msg = await event.get_reply_message()
@@ -105,8 +105,8 @@ async def on_snip_save(event):
         )
 
 
-@Lion.on(admin_cmd(pattern="listfilters"))
-@Lion.on(sudo_cmd(pattern="listfilters", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="listfilters"))
+@kiku.on(sudo_cmd(pattern="listfilters", allow_sudo=True))
 async def on_snip_list(event):
     all_snips = get_all_filters(event.chat_id)
     OUT_STR = "Available Filters in the Current Chat:\n"
@@ -131,16 +131,16 @@ async def on_snip_list(event):
         await eor(event, OUT_STR)
 
 
-@Lion.on(admin_cmd(pattern="clearfilter (.*)"))
-@Lion.on(sudo_cmd(pattern="clearfilter (.*)", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="clearfilter (.*)"))
+@kiku.on(sudo_cmd(pattern="clearfilter (.*)", allow_sudo=True))
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_filter(event.chat_id, name)
     await eor(event, f"filter {name} deleted successfully")
 
 
-@Lion.on(admin_cmd(pattern="clearallfilters"))
-@Lion.on(sudo_cmd(pattern="clearallfilters", allow_sudo=True))
+@kiku.on(admin_cmd(pattern="clearallfilters"))
+@kiku.on(sudo_cmd(pattern="clearallfilters", allow_sudo=True))
 async def on_all_snip_delete(event):
     remove_all_filters(event.chat_id)
     await eor(event, f"filters **in current chat** deleted successfully")
